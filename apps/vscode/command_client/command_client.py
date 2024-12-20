@@ -152,6 +152,8 @@ def run_command(
     # sanity checking
     uuid = str(uuid4())
 
+    print('sending ', command_id, ' with args ', args)
+
     request = Request(
         command_id=command_id,
         args=args,

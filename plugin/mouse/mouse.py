@@ -41,6 +41,11 @@ class Actions:
         if eye_zoom_mouse.zoom_mouse.state == eye_zoom_mouse.STATE_OVERLAY:
             actions.tracking.zoom_cancel()
 
+    def zoom_open():
+        """Opens a zoom."""
+        if eye_zoom_mouse.zoom_mouse.state != eye_zoom_mouse.STATE_OVERLAY:
+            actions.tracking.zoom()
+
     def mouse_wake():
         """Enable control mouse, zoom mouse, and disables cursor"""
         actions.tracking.control_zoom_toggle(True)
