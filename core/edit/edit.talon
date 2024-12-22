@@ -14,8 +14,14 @@ next one: edit.find_next()
 # Navigation
 
 # The reason for these spoken forms is that "page up" and "page down" are globally defined as keys.
+select line: edit.extend_line_start()
+select all: key(cmd-a)
+
+# The reason for these spoken forms is that "page up" and "page down" are globally defined as keys.
 scroll up: edit.page_up()
 scroll down: edit.page_down()
+scroll home: key(home)
+scroll end: key(end)
 
 # go left, go left left down, go 5 left 2 down
 # go word left, go 2 words right

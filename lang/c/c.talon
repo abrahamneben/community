@@ -1,4 +1,5 @@
 code.language: c
+code.language: cpp
 -
 tag(): user.code_imperative
 
@@ -91,3 +92,7 @@ toggle includes: user.code_toggle_libraries()
 include <user.code_libraries>:
     user.code_insert_library(code_libraries, "")
     key(end enter)
+
+push comment: "// "
+
+var string: "std::string"

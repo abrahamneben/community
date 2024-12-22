@@ -10,7 +10,9 @@ tag(): user.command_search
 
 window reload: user.vscode("workbench.action.reloadWindow")
 window close: user.vscode("workbench.action.closeWindow")
-#multiple_cursor.py support end
+window new: user.menu_select('File|New Window')
+window close: user.menu_select('File|Close Window')
+
 
 go view [<user.text>]:
     user.vscode("workbench.action.openView")
@@ -68,11 +70,9 @@ wrap switch: user.vscode("editor.action.toggleWordWrap")
 zen switch: user.vscode("workbench.action.toggleZenMode")
 
 # File Commands
-file hunt [<user.text>]:
+hunt file$:
     user.vscode("workbench.action.quickOpen")
-    sleep(50ms)
-    insert(text or "")
-file hunt (pace | paste):
+hunt file (pace | paste)$:
     user.vscode("workbench.action.quickOpen")
     sleep(50ms)
     edit.paste()
@@ -98,6 +98,14 @@ file delete:
 file open folder: user.vscode("revealFileInOS")
 file reveal: user.vscode("workbench.files.action.showActiveFileInExplorer")
 save ugly: user.vscode("workbench.action.files.saveWithoutFormatting")
+
+# Hunting
+hunt next match:
+    key(cmd-c)
+    key(cmd-f)
+    key(cmd-v)
+    key(enter)
+
 
 # Language Features
 suggest show: user.vscode("editor.action.triggerSuggest")
@@ -165,44 +173,20 @@ fold five: user.vscode("editor.foldLevel5")
 fold six: user.vscode("editor.foldLevel6")
 fold seven: user.vscode("editor.foldLevel7")
 
-# Git / Github (not using verb-noun-adjective pattern, mirroring terminal commands.)
-git branch: user.vscode("git.branchFrom")
-git branch this: user.vscode("git.branch")
-git checkout [<user.text>]:
-    user.vscode("git.checkout")
-    sleep(50ms)
-    insert(text or "")
-git commit [<user.text>]:
-    user.vscode("git.commitStaged")
-    sleep(100ms)
-    user.insert_formatted(text or "", "CAPITALIZE_FIRST_WORD")
-git commit undo: user.vscode("git.undoCommit")
-git commit amend: user.vscode("git.commitStagedAmend")
-git diff: user.vscode("git.openChange")
-git fetch: user.vscode("git.fetch")
-git fetch all: user.vscode("git.fetchAll")
-git ignore: user.vscode("git.ignore")
-git merge: user.vscode("git.merge")
-git output: user.vscode("git.showOutput")
-git pull: user.vscode("git.pullRebase")
-git push: user.vscode("git.push")
-git push force: user.vscode("git.pushForce")
-git rebase abort: user.vscode("git.rebaseAbort")
-git reveal: user.vscode("git.revealInExplorer")
-git revert: user.vscode("git.revertChange")
-git stash: user.vscode("git.stash")
-git stash pop: user.vscode("git.stashPop")
-git status: user.vscode("workbench.scm.focus")
-git stage: user.vscode("git.stage")
-git stage all: user.vscode("git.stageAll")
-git sync: user.vscode("git.sync")
-git unstage: user.vscode("git.unstage")
-git unstage all: user.vscode("git.unstageAll")
-pull request: user.vscode("pr.create")
-# Use keyboard shortcuts because VSCode relies on when clause contexts to choose the appropriate
-# action: https://code.visualstudio.com/api/references/when-clause-contexts
-change next: key(alt-f5)
-change last: key(shift-alt-f5)
+
+# Panel focusing
+focus panel first: user.vscode("workbench.action.focusFirstEditorGroup")
+focus code: user.vscode("workbench.action.focusFirstEditorGroup")
+focus panel second: user.vscode("workbench.action.focusSecondEditorGroup")
+focus panel third: user.vscode("workbench.action.focusThirdEditorGroup")
+
+focus terminal: user.vscode("workbench.action.terminal.focus")
+focus terminal first: user.vscode("workbench.action.terminal.focusAtIndex1")
+focus terminal second: user.vscode("workbench.action.terminal.focusAtIndex2")
+focus terminal third: user.vscode("workbench.action.terminal.focusAtIndex3")
+close terminal: user.vscode("workbench.action.terminal.kill")
+split terminal: user.vscode("workbench.action.terminal.splitActiveTab")
+
 
 # Testing
 test run: user.vscode("testing.runAtCursor")
@@ -288,3 +272,15 @@ cell run: user.vscode("notebook.cell.execute")
 
 install local: user.vscode("workbench.extensions.action.installVSIX")
 preview markdown: user.vscode("markdown.showPreview")
+
+
+select all: user.vscode("editor.action.selectAll")
+select file: key(cmd-enter)
+select highlights: user.vscode("editor.action.selectHighlights")
+
+# word part actions
+clear part: user.vscode("deleteWordPartLeft")
+go part left: user.vscode("cursorWordPartLeft")
+go part right: user.vscode("cursorWordPartRight")
+select part left: user.vscode("cursorWordPartLeftSelect")
+select part right: user.vscode("cursorWordPartRightSelect")

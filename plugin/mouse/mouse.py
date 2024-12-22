@@ -38,8 +38,13 @@ mod.setting(
 class Actions:
     def zoom_close():
         """Closes an in-progress zoom. Talon will move the cursor position but not click."""
-        if eye_zoom_mouse.zoom_mouse.state == eye_zoom_mouse.STATE_OVERLAY:
+        if eye_zoom_mouse.zoom_mouse.enabled and eye_zoom_mouse.zoom_mouse.state == eye_zoom_mouse.STATE_OVERLAY:
             actions.tracking.zoom_cancel()
+
+    def zoom_open():
+        """Opens a zoom."""
+        if eye_zoom_mouse.zoom_mouse.enabled and eye_zoom_mouse.zoom_mouse.state != eye_zoom_mouse.STATE_OVERLAY:
+            actions.tracking.zoom()
 
     def mouse_wake():
         """Enable control mouse, zoom mouse, and disables cursor"""

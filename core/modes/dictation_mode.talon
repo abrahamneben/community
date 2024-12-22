@@ -42,7 +42,7 @@ select left <number_small> (character | characters):
 select right <number_small> (character | characters):
     edit.extend_right()
     repeat(number_small - 1)
-clear left <number_small> (word | words):
+clear <number_small> (word | words):
     edit.extend_word_left()
     repeat(number_small - 1)
     edit.delete()
@@ -50,7 +50,7 @@ clear right <number_small> (word | words):
     edit.extend_word_right()
     repeat(number_small - 1)
     edit.delete()
-clear left <number_small> (character | characters):
+clear <number_small> (character | characters):
     edit.extend_left()
     repeat(number_small - 1)
     edit.delete()

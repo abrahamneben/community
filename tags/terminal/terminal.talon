@@ -1,21 +1,69 @@
-tag: terminal
+title: /terminal/i
+app: vscode
+app: iterm2
+language: en
+
 -
-# tags should be activated for each specific terminal in the respective talon file
 
-lisa: user.terminal_list_directories()
-lisa all: user.terminal_list_all_directories()
-katie [dir] [<user.text>]: user.terminal_change_directory(text or "")
-katie root: user.terminal_change_directory_root()
-katie (up | back): user.terminal_change_directory("..")
-go <user.system_path>: insert('cd "{system_path}"\n')
-path <user.system_path>: insert('"{system_path}"')
-clear screen: user.terminal_clear_screen()
-run last: user.terminal_run_last()
-rerun [<user.text>]: user.terminal_rerun_search(text or "")
-rerun search: user.terminal_rerun_search("")
-kill all: user.terminal_kill_all()
+git commit [<user.text>]:
+    user.insert_between('git commit -n --message "{text}', '"')
+git stash: "git stash"
 
-copy paste:
-    edit.copy()
-    sleep(50ms)
-    edit.paste()
+git branch$: "gb\n"
+git branch <number_small>: "gb {number_small}"
+git checkout develop$: "git checkout develop"
+
+git diff$: "git diff\n"
+git fetch: "git fetch\n"
+git push: "git push\n"
+open pull: "openpr\n"
+git add patch$: "git add --patch\n"
+git stage all$: "git add ."
+
+git add dot$: "git add .\n"
+git pull$: "git pull"
+git log$: "git log\n"
+#git status$: "git status\n"
+git reset back <number_small>$: "git reset HEAD~{number_small}"
+git reset$: "git reset"
+git reset hard$: "git reset --hard"
+git new branch$: "git checkout -b "
+git rebase develop$: "git rebase origin/develop"
+
+cancel: key(ctrl-c)
+
+# vim
+vim edit:
+    key(escape)
+    "i"
+
+vim save:
+    key(escape)
+    ":wq"
+    key(enter)
+
+back search: key(ctrl-r)
+
+enter: key(enter)
+
+# chromatic
+chromatic tauri: "chr; bazel run --config=tauri-dist //chromatic/sw/apps/tauri/fitting"
+chromatic chemist: "chr; bazel run //chromatic/ml/apps/chemist:chemist"
+chromatic home: "chr\n"
+chromatic settings viewer: "bazel run //chromatic/fw/infra/flux:settings_viewer\n"
+chromatic flash buds: "chr; bazel run //chromatic/fw/infra/flux:cli --//chromatic/fw/projects:fw_stamping=forced  -- update buds --model dual"
+chromatic lint: "chr; lint"
+
+# personal network
+connect mac mini: "ssh aneben@macmini.thinlens.net"
+
+# navigation
+cd <user.text>: "cd {text}"
+el es: "ls\n"
+cat <user.text>: "cat {text}"
+
+# docker
+docker force up: "docker-compose up -d --force-recreate"
+
+auto complete: key(tab)
+exit: "exit"
