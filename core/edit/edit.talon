@@ -78,7 +78,7 @@ clear word right:
     edit.delete()
 
 # Copy
-copy that: edit.copy()
+copy : edit.copy()
 copy word left: user.copy_word_left()
 copy word right: user.copy_word_right()
 
@@ -116,7 +116,7 @@ cut word right: user.cut_word_right()
 #     edit.cut()
 
 # Paste
-(pace | paste) that: edit.paste()
+(pace | paste) this: edit.paste()
 (pace | paste) enter:
     edit.paste()
     key(enter)

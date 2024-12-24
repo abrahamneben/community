@@ -7,6 +7,7 @@ ellipsis: "..."
 (comma and | spamma): ", "
 arrow: "->"
 dub arrow: "=>"
+equal: "="
 
 # Insert delimiter pairs
 <user.delimiter_pair>: user.delimiter_pair_insert(delimiter_pair)

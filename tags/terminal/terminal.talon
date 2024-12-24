@@ -67,3 +67,10 @@ docker force up: "docker-compose up -d --force-recreate"
 
 auto complete: key(tab)
 exit: "exit"
+
+push bazel build: "bazel build //chromatic/"
+
+# running commands
+run last:
+    key(up)
+    key(enter)

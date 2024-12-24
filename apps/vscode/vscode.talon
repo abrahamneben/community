@@ -11,7 +11,6 @@ tag(): user.command_search
 window reload: user.vscode("workbench.action.reloadWindow")
 window close: user.vscode("workbench.action.closeWindow")
 window new: user.menu_select('File|New Window')
-window close: user.menu_select('File|Close Window')
 
 
 go view [<user.text>]:
@@ -105,6 +104,9 @@ hunt next match:
     key(cmd-f)
     key(cmd-v)
     key(enter)
+hunt case: user.vscode("toggleFindCaseSensitive")
+hunt replace: user.vscode("editor.action.startFindReplaceAction")
+hunt replace go: key(cmd-enter)
 
 
 # Language Features
@@ -142,6 +144,11 @@ go recent [<user.text>]:
     insert(text or "")
     sleep(250ms)
 go edit: user.vscode("workbench.action.navigateToLastEditLocation")
+jump <number>:
+    user.vscode("workbench.action.gotoLine")
+    sleep(250ms)
+    insert(number)
+    key(enter)
 
 # Bookmarks. Requires Bookmarks plugin
 bar marks: user.vscode("workbench.view.extension.bookmarks")
@@ -248,9 +255,6 @@ restore: user.vscode("workbench.action.evenEditorWidths")
 select breadcrumb: user.vscode("breadcrumbs.focusAndSelect")
 # Use `alt-left` and `alt-right` to navigate the bread crumb
 
-replace here:
-    user.replace("")
-    key(cmd-alt-l)
 
 hover show: user.vscode("editor.action.showHover")
 
@@ -284,3 +288,14 @@ go part left: user.vscode("cursorWordPartLeft")
 go part right: user.vscode("cursorWordPartRight")
 select part left: user.vscode("cursorWordPartLeftSelect")
 select part right: user.vscode("cursorWordPartRightSelect")
+
+open build file:
+    user.vscode_with_arg("workbench.action.tasks.runTask", "Open Nearest BUILD File")
+
+save and run:
+    user.vscode("workbench.action.files.save")
+    user.vscode("workbench.action.terminal.focus")
+    sleep(200ms)
+    key(up)
+    key(enter)
+

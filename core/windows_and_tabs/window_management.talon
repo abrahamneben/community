@@ -4,6 +4,15 @@ window last: app.window_previous()
 window close: app.window_close()
 window hide: app.window_hide()
 focus <user.running_applications>: user.switcher_focus(running_applications)
+
+window max: key(cmd-ctrl-enter)
+window left: key(cmd-ctrl-h)
+window right: key(cmd-ctrl-n)
+window cycle: key(cmd-shift-4)
+spotlight: key(cmd-space)
+window quit: key(cmd-q)
+
+
 # following only works on windows. Can't figure out how to make it work for mac. No idea what the equivalent for linux would be.
 focus$: user.switcher_menu()
 focus last: user.switcher_focus_last()

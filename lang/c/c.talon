@@ -56,7 +56,7 @@ state pre end: "#endif "
 state pragma: "#pragma "
 state default: "default:\nbreak;"
 
-#control flow
+#rrol flow
 #best used with a push like command
 #the below example may not work in editors that automatically add the closing brace
 #if so uncomment the two lines and comment out the rest accordingly
@@ -81,7 +81,7 @@ push braces:
 # Ex. (int *)
 cast to <user.c_cast>: "{c_cast}"
 standard cast to <user.stdint_cast>: "{stdint_cast}"
-<user.c_types>: "{c_types}"
+var <user.c_types>: "{c_types}"
 <user.c_pointers>: "{c_pointers}"
 <user.c_keywords>: "{c_keywords}"
 <user.c_signed>: "{c_signed}"
@@ -95,4 +95,27 @@ include <user.code_libraries>:
 
 push comment: "// "
 
-var string: "std::string"
+hello world: "abraham2"
+
+
+push gets: "= "
+push equal: " == "
+push standard see out: "std::cout << "
+push new line: " << \"\\n\";"
+status okay: "absl::OkStatus()"
+push status or: user.insert_between("absl::StatusOr<", ">")
+push constant: "const "
+push return: "return "
+
+push debug <number_small>: "std::cout << \"debug {number_small}\\n\";"
+
+push if: user.insert_between("if (", ")")
+push continue: "continue;"
+push break: "break;"
+push var <user.c_types>: "{c_types} "
+push using: "using "
+push var standard map: user.insert_between("std::map<", "> ")
+push const: "const "
+push template type: user.insert_between("template <typename", "> ")
+push continue: "continue;"
+push void: "void "

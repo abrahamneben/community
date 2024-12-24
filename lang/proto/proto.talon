@@ -5,7 +5,7 @@ push braces:
     insert("{")
     key(enter)
 
-state message: "message "
+push message: "message "
 state package: "package "
 state reserved: "reserved "
 state enum: "enum "
@@ -19,3 +19,6 @@ type bool: "bool "
 
 type {user.code_type}: "{code_type}"
 repeated type {user.code_type}: "repeated {code_type}"
+
+push comment: "// "
+push equal: " = "

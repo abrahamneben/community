@@ -18,7 +18,7 @@ code_languages = [
     # Language("assembly", "assembly", ["asm", "s"]),
     # Language("bash", "bash", ["sh", "bashbook"]),
     Language("batch", "batch", ["bat"]),
-    Language("c", "see", ["c", "h"]),
+    Language("c", "see", ["c", "h", "cc", "cpp"]),
     # Language("cmake", "see make", ["cmake"]),
     # Language("cplusplus", "see plus plus", ["cpp", "hpp"]),
     Language("csharp", "see sharp", ["cs"]),

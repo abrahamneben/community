@@ -5,90 +5,89 @@ language: en
 
 
 # Navigation
-go up [<user.ordinals>]$:
-    number = ordinals or 1
+go up [<number_small> times]$:
+    number_small = number_small or 1
     edit.up()
-    repeat(number - 1)
-go down [<user.ordinals>]$:
-    number = ordinals or 1
+    repeat(number_small - 1)
+go down [<number_small> times]$:
+    number_small = number_small or 1
     edit.down()
-    repeat(number - 1)
-go left [<user.ordinals>]$:
-    number = ordinals or 1
+    repeat(number_small - 1)
+go left [<number_small> times]$:
+    number_small = number_small or 1
     edit.left()
-    repeat(number - 1)
-go right [<user.ordinals>]$:
-    number = ordinals or 1
+    repeat(number_small - 1)
+go right [<number_small> times]$:
+    number_small = number_small or 1
     edit.right()
-    repeat(number - 1)
-go left word [<user.ordinals>]$:
-    number = ordinals or 1
+    repeat(number_small - 1)
+go left word [<number_small> times]$:
+    number_small = number_small or 1
     edit.word_left()
-    repeat(number - 1)
-go right word [<user.ordinals>]$:
-    number = ordinals or 1
+    repeat(number_small - 1)
+go right word [<number_small> times]$:
+    number_small = number_small or 1
     edit.word_right()
-    repeat(number - 1)
+    repeat(number_small - 1)
 go line start$: edit.line_start()
 go line end$: edit.line_end()
 
 # Selection
-select up [<user.ordinals>]$:
-    number = ordinals or 1
+select up [<number_small> times]$:
+    number_small = number_small or 1
     edit.extend_up()
-    repeat(number - 1)
-select down [<user.ordinals>]$:
-    number = ordinals or 1
+    repeat(number_small - 1)
+select down [<number_small> times]$:
+    number_small = number_small or 1
     edit.extend_down()
-    repeat(number - 1)
-select left [<user.ordinals>]$:
-    number = ordinals or 1
+    repeat(number_small - 1)
+select left [<number_small> times]$:
+    number_small = number_small or 1
     edit.extend_left()
-    repeat(number - 1)
-select right [<user.ordinals>]$:
-    number = ordinals or 1
+    repeat(number_small - 1)
+select right [<number_small> times]$:
+    number_small = number_small or 1
     edit.extend_right()
-    repeat(number - 1)
+    repeat(number_small - 1)
 
-select left word [<user.ordinals>]$:
-    number = ordinals or 1
+select left word [<number_small> times]$:
+    number_small = number_small or 1
     edit.extend_word_left()
-    repeat(number - 1)
-select right word [<user.ordinals>]$:
-    number = ordinals or 1
+    repeat(number_small - 1)
+select right word [<number_small> times]$:
+    number_small = number_small or 1
     edit.extend_word_right()
-    repeat(number - 1)
+    repeat(number_small - 1)
 
 
 # Deletion
-clear up [<user.ordinals>]$:
-    number = ordinals or 1
+clear up [<number_small> times]$:
+    number_small = number_small or 1
     edit.extend_up()
-    repeat(number - 1)
+    repeat(number_small - 1)
     edit.delete()
-clear down [<user.ordinals>]$:
-    number = ordinals or 1
+clear down [<number_small> times]$:
+    number_small = number_small or 1
     edit.extend_down()
-    repeat(number - 1)
+    repeat(number_small - 1)
     edit.delete()
-clear word [<user.ordinals>]$:
-    number = ordinals or 1
+clear word [<number_small> times]$:
+    number_small = number_small or 1
     edit.delete_word()
-    repeat(number - 1)
-clear right word [<user.ordinals>]$:
-    number = ordinals or 1
+    repeat(number_small - 1)
+clear right word [<number_small> times]$:
+    number_small = number_small or 1
     edit.extend_word_right()
-    repeat(number - 1)
+    repeat(number_small - 1)
     edit.delete()
-clear [<user.ordinals>]$:
-    number = ordinals or 1
-    edit.extend_left()
-    repeat(number - 1)
+clear [<number_small> times]$:
+    number_small = number_small or 1
     edit.delete()
-clear right [<user.ordinals>]$:
-    number = ordinals or 1
+    repeat(number_small - 1)
+clear right [<number_small> times]$:
+    number_small = number_small or 1
     edit.extend_right()
-    repeat(number - 1)
+    repeat(number_small - 1)
     edit.delete()
 clear line$:
     edit.extend_line_start()

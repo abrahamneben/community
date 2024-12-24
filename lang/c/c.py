@@ -5,6 +5,7 @@ mod = Module()
 ctx = Context()
 ctx.matches = r"""
 code.language: c
+code.language: cpp
 """
 
 ctx.lists["self.c_pointers"] = {
@@ -59,6 +60,10 @@ ctx.lists["self.c_types"] = {
     "num": "enum",
     "union": "union",
     "float": "float",
+    "auto": "auto",
+    "size":"size_t",
+    "standard string":"std::string",
+    "bool":"bool"
 }
 
 ctx.lists["user.code_libraries"] = {
