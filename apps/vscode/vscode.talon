@@ -25,7 +25,7 @@ bar run: user.vscode("workbench.view.debug")
 bar search: user.vscode("workbench.view.search")
 bar source: user.vscode("workbench.view.scm")
 bar test: user.vscode("workbench.view.testing.focus")
-bar switch: user.vscode("workbench.action.toggleSidebarVisibility")
+bar toggle: user.vscode("workbench.action.toggleSidebarVisibility")
 
 # Symbol search
 symbol hunt [<user.text>]:
@@ -69,8 +69,10 @@ wrap switch: user.vscode("editor.action.toggleWordWrap")
 zen switch: user.vscode("workbench.action.toggleZenMode")
 
 # File Commands
-hunt file$:
+hunt file [<user.text>]$:
     user.vscode("workbench.action.quickOpen")
+    sleep(250ms)
+    insert(text or "")
 hunt file (pace | paste)$:
     user.vscode("workbench.action.quickOpen")
     sleep(50ms)
@@ -140,9 +142,8 @@ go type: user.vscode("editor.action.goToTypeDefinition")
 go usage: user.vscode("references-view.find")
 go recent [<user.text>]:
     user.vscode("workbench.action.openRecent")
-    sleep(50ms)
-    insert(text or "")
     sleep(250ms)
+    insert(text or "")
 go edit: user.vscode("workbench.action.navigateToLastEditLocation")
 jump <number>:
     user.vscode("workbench.action.gotoLine")
@@ -180,17 +181,56 @@ fold five: user.vscode("editor.foldLevel5")
 fold six: user.vscode("editor.foldLevel6")
 fold seven: user.vscode("editor.foldLevel7")
 
+# Git / Github (not using verb-noun-adjective pattern, mirroring terminal commands.)
+#git branch: user.vscode("git.branchFrom")
+#git branch this: user.vscode("git.branch")
+#git checkout [<user.text>]:
+#    user.vscode("git.checkout")
+#    sleep(50ms)
+#    insert(text or "")
+git commit$:
+    user.vscode_with_arg("workbench.action.tasks.runTask", "Git Commit")
+git commit undo: user.vscode("git.undoCommit")
+#git commit amend: user.vscode("git.commitStagedAmend")
+git diff: user.vscode("git.openChange")
+#git fetch: user.vscode("git.fetch")
+#git fetch all: user.vscode("git.fetchAll")
+#git ignore: user.vscode("git.ignore")
+#git merge: user.vscode("git.merge")
+#git output: user.vscode("git.showOutput")
+#git pull: user.vscode("git.pullRebase")
+#git push: user.vscode("git.push")
+#git push force: user.vscode("git.pushForce")
+#git rebase abort: user.vscode("git.rebaseAbort")
+#git reveal: user.vscode("git.revealInExplorer")
+#git revert: user.vscode("git.revertChange")
+#git stash: user.vscode("git.stash")
+#git stash pop: user.vscode("git.stashPop")
+git status: user.vscode("workbench.scm.focus")
+git stage: user.vscode("git.stage")
+git stage all: user.vscode("git.stageAll")
+git stage patch: user.vscode_with_arg("workbench.action.tasks.runTask", "Git Add Patch Current File")
+#git sync: user.vscode("git.sync")
+git unstage: user.vscode("git.unstage")
+git unstage all: user.vscode("git.unstageAll")
+pull request: user.vscode_with_arg("workbench.action.tasks.runTask", "Open PR")
+# Use keyboard shortcuts because VSCode relies on when clause contexts to choose the appropriate
+# action: https://code.visualstudio.com/api/references/when-clause-contexts
+#change next:key(ctrl-cmd-f6)
+#change last: key(shift-ctrl-cmd-f6)
+show changes: user.vscode("workbench.scm.history.focus")
 
 # Panel focusing
-focus panel first: user.vscode("workbench.action.focusFirstEditorGroup")
+focus panel one: user.vscode("workbench.action.focusFirstEditorGroup")
 focus code: user.vscode("workbench.action.focusFirstEditorGroup")
-focus panel second: user.vscode("workbench.action.focusSecondEditorGroup")
-focus panel third: user.vscode("workbench.action.focusThirdEditorGroup")
+focus panel two: user.vscode("workbench.action.focusSecondEditorGroup")
+focus panel three: user.vscode("workbench.action.focusThirdEditorGroup")
+focus panel four: user.vscode("workbench.action.focusFourthEditorGroup")
 
 focus terminal: user.vscode("workbench.action.terminal.focus")
-focus terminal first: user.vscode("workbench.action.terminal.focusAtIndex1")
-focus terminal second: user.vscode("workbench.action.terminal.focusAtIndex2")
-focus terminal third: user.vscode("workbench.action.terminal.focusAtIndex3")
+focus terminal one: user.vscode("workbench.action.terminal.focusAtIndex1")
+focus terminal two: user.vscode("workbench.action.terminal.focusAtIndex2")
+focus terminal three: user.vscode("workbench.action.terminal.focusAtIndex3")
 close terminal: user.vscode("workbench.action.terminal.kill")
 split terminal: user.vscode("workbench.action.terminal.splitActiveTab")
 
@@ -284,18 +324,28 @@ select highlights: user.vscode("editor.action.selectHighlights")
 
 # word part actions
 clear part: user.vscode("deleteWordPartLeft")
-go part left: user.vscode("cursorWordPartLeft")
-go part right: user.vscode("cursorWordPartRight")
+go left part: user.vscode("cursorWordPartLeft")
+go right part: user.vscode("cursorWordPartRight")
 select part left: user.vscode("cursorWordPartLeftSelect")
 select part right: user.vscode("cursorWordPartRightSelect")
 
 open build file:
     user.vscode_with_arg("workbench.action.tasks.runTask", "Open Nearest BUILD File")
 
-save and run:
+open header file:
+    user.vscode_with_arg("workbench.action.tasks.runTask", "Open Header File")
+
+open source file:
+    user.vscode_with_arg("workbench.action.tasks.runTask", "Open Implementation File")
+
+run again:
     user.vscode("workbench.action.files.save")
     user.vscode("workbench.action.terminal.focus")
+    user.vscode("workbench.action.terminal.clear")
     sleep(200ms)
     key(up)
     key(enter)
 
+# file utils
+duplicate file: user.vscode("fileutils.duplicateFile")
+rename file: user.vscode("fileutils.renameFile")

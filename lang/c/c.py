@@ -30,7 +30,7 @@ ctx.lists["self.c_keywords"] = {
 }
 
 ctx.lists["self.stdint_types"] = {
-    "character": "int8_t",
+    "byte": "uint8_t",
     "char": "int8_t",
     "short": "int16_t",
     "long": "int32_t",
@@ -47,7 +47,7 @@ ctx.lists["self.stdint_types"] = {
 }
 
 ctx.lists["self.c_types"] = {
-    "character": "char",
+    "byte": "uint8_t",
     "char": "char",
     "short": "short",
     "long": "long",

@@ -76,6 +76,8 @@ simple_action_callbacks: dict[str, Callable] = {
     "pasteFromClipboard": actions.edit.paste,
     "insertLineAbove": actions.edit.line_insert_up,
     "insertLineBelow": actions.edit.line_insert_down,
+    "deleteLineAbove": actions.edit.line_delete_up,
+    "deleteLineBelow": actions.edit.line_delete_down,
     "insertCopyAfter": actions.edit.selection_clone,
     "delete": actions.edit.delete,
 }

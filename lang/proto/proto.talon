@@ -21,4 +21,5 @@ type {user.code_type}: "{code_type}"
 repeated type {user.code_type}: "repeated {code_type}"
 
 push comment: "// "
-push equal: " = "
+push gets: "= "
+push var bool: "bool "

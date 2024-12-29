@@ -14,8 +14,8 @@ window quit: key(cmd-q)
 
 
 # following only works on windows. Can't figure out how to make it work for mac. No idea what the equivalent for linux would be.
-focus$: user.switcher_menu()
-focus last: user.switcher_focus_last()
+#focus$: user.switcher_menu()
+#focus last: user.switcher_focus_last()
 running list: user.switcher_toggle_running()
 running close: user.switcher_hide_running()
 launch <user.launch_applications>: user.switcher_launch(launch_applications)

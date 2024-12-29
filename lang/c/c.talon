@@ -28,8 +28,8 @@ settings():
 
 # NOTE: migrated from generic, as they were only used here, though once cpp support is added, perhaps these should be migrated to a tag together with the commands below
 state include: insert("#include ")
-state include system: user.insert_between("#include <", ">")
-state include local: user.insert_between('#include "', '"')
+push include system: user.insert_between("#include <", ">")
+push include local: user.insert_between('#include "', '"')
 state type deaf: insert("typedef ")
 state type deaf struct:
     insert("typedef struct")
@@ -38,7 +38,7 @@ state type deaf struct:
     key('tab')
 
 # XXX - create a preprocessor tag for these, as they will match cpp, etc
-state define: "#define "
+push define: "#define "
 state (undefine | undeaf): "#undef "
 state if (define | deaf): "#ifdef "
 [state] define <user.text>$:
@@ -95,15 +95,16 @@ include <user.code_libraries>:
 
 push comment: "// "
 
-hello world: "abraham2"
-
+state null pointer: "nullptr"
+state stream: "<< "
 
 push gets: "= "
 push equal: " == "
-push standard see out: "std::cout << "
+push not equal: " != "
 push new line: " << \"\\n\";"
-status okay: "absl::OkStatus()"
-push status or: user.insert_between("absl::StatusOr<", ">")
+push status okay$: "absl::OkStatus()"
+push status or$: user.insert_between("absl::StatusOr<", ">")
+push status$: "absl::Status "
 push constant: "const "
 push return: "return "
 
@@ -115,7 +116,22 @@ push break: "break;"
 push var <user.c_types>: "{c_types} "
 push using: "using "
 push var standard map: user.insert_between("std::map<", "> ")
+push var standard list: user.insert_between("std::list<", "> ")
+push var standard pair: user.insert_between("std::pair<", "> ")
 push const: "const "
 push template type: user.insert_between("template <typename", "> ")
+push loop for: user.insert_between("for (", ")")
 push continue: "continue;"
 push void: "void "
+push standard out: user.insert_between("std::cout << ", " << std::endl;")
+
+push <user.c_types> funk <user.text>:
+    user.insert_between("{c_types} {text}(", ")")
+
+push or equal: "|= "
+push shift left: "<< "
+push shift right: ">> "
+end state: ";\n"
+push block:
+    edit.line_end()
+    " {\n"

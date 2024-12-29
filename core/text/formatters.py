@@ -240,7 +240,7 @@ formatter_list = [
     CodeFormatter("DASH_SEPARATED", "-", lower, lower),
     CodeFormatter("DOT_SEPARATED", ".", lower, lower),
     CodeFormatter("SLASH_SEPARATED", "/", lower, lower),
-    CodeFormatter("ALL_SLASHES", "/", lambda text: f"/{text.lower()}", lower),
+    CodeFormatter("ALL_SLASHES", "/", lambda text: f"//{text.lower()}", lower),
     CodeFormatter("DOUBLE_UNDERSCORE", "__", lower, lower),
     CodeFormatter("DOUBLE_COLON_SEPARATED", "::", lower, lower),
 ]
@@ -494,3 +494,9 @@ class Actions:
         """Insert a list of strings, sequentially."""
         for string in strings:
             actions.insert(string)
+
+
+    def insert_string_plus_snake_string(s1: str, s2: str):
+        """Insert a string followed by a snake-formatted string"""
+        actions.insert(s1 + format_phrase(s2, 'SNAKE_CASE'))
+

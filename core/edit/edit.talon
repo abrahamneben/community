@@ -58,8 +58,8 @@ indent [more]: edit.indent_more()
 (indent less | out dent): edit.indent_less()
 
 # Delete
-clear left: edit.delete()
-clear right: user.delete_right()
+#clear left: edit.delete()
+#clear right: user.delete_right()
 
 clear up:
     edit.extend_line_up()
@@ -138,7 +138,7 @@ padding: user.insert_between(" ", " ")
     insert(" ")
 
 # Undo/redo
-undo that: edit.undo()
+#undo that: edit.undo()
 redo that: edit.redo()
 
 # Save

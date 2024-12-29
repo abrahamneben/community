@@ -12,7 +12,6 @@ mod.setting(
 
 END_OF_WORD_SYMBOLS = ".!?;:—_/\\|@#$%^&*()[]{}<>=+-~`"
 
-
 @ctx.action_class("edit")
 class EditActions:
     def selected_text() -> str:
@@ -23,6 +22,7 @@ class EditActions:
             return s.text()
         except clip.NoChange:
             return ""
+
 
     def line_insert_down():
         actions.edit.line_end()

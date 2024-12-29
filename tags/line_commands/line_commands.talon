@@ -7,10 +7,10 @@ lend:
 bend:
     user.deprecate_command("2024-07-30", "bend", "go line start | head")
     edit.line_start()
-go <number>: edit.jump_line(number)
-go <number> end:
-    edit.jump_line(number)
-    edit.line_end()
+#go <number>: edit.jump_line(number)
+#go <number> end:
+#    edit.jump_line(number)
+#    edit.line_end()
 comment [line] <number>:
     user.select_range(number, number)
     code.toggle_comment()
