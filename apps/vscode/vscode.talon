@@ -226,6 +226,8 @@ focus code: user.vscode("workbench.action.focusFirstEditorGroup")
 focus panel two: user.vscode("workbench.action.focusSecondEditorGroup")
 focus panel three: user.vscode("workbench.action.focusThirdEditorGroup")
 focus panel four: user.vscode("workbench.action.focusFourthEditorGroup")
+panel move left: user.vscode("workbench.action.moveEditorToPreviousGroup")
+panel move right: user.vscode("workbench.action.moveEditorToNextGroup")
 
 focus terminal: user.vscode("workbench.action.terminal.focus")
 focus terminal one: user.vscode("workbench.action.terminal.focusAtIndex1")
@@ -343,9 +345,13 @@ run again:
     user.vscode("workbench.action.terminal.focus")
     user.vscode("workbench.action.terminal.clear")
     sleep(200ms)
+    key(ctrl-c)
     key(up)
     key(enter)
 
 # file utils
 duplicate file: user.vscode("fileutils.duplicateFile")
 rename file: user.vscode("fileutils.renameFile")
+
+debug language:
+    print(user.vscode('getLanguageMode'))

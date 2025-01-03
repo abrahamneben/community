@@ -78,9 +78,9 @@ clear word right:
     edit.delete()
 
 # Copy
-copy : edit.copy()
-copy word left: user.copy_word_left()
-copy word right: user.copy_word_right()
+copy this$: edit.copy()
+#copy word left: user.copy_word_left()
+#copy word right: user.copy_word_right()
 
 #to do: do we want these variants, seem to conflict
 # copy left:

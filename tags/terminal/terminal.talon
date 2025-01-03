@@ -30,11 +30,16 @@ git reset$: "git reset"
 git reset hard$: "git reset --hard"
 git branch new <user.text>$:
     user.insert_string_plus_snake_string('git checkout -b ', text)
-git rebase develop$: "git rebase origin/develop"
-change add: "y\n"
-change pass: "n\n"
-change end: "q\n"
+git rebase origin develop$: "git rebase origin/develop\n"
+git rebase$: "git rebase"
+git rebase continue$: "GIT_EDITOR=true git rebase --continue\n"
+change add$: "y\n"
+change pass$: "n\n"
+change pass bulk$: "d\n"
+change end$: "q\n"
+git clean untracked files$: "git clean -df"
 
+git cherry$: "git cherry-pick "
 cancel: key(ctrl-c)
 
 # vim
