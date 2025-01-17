@@ -14,8 +14,14 @@ next one: edit.find_next()
 # Navigation
 
 # The reason for these spoken forms is that "page up" and "page down" are globally defined as keys.
+select line: edit.extend_line_start()
+select all: key(cmd-a)
+
+# The reason for these spoken forms is that "page up" and "page down" are globally defined as keys.
 scroll up: edit.page_up()
 scroll down: edit.page_down()
+scroll home: key(home)
+scroll end: key(end)
 
 # go left, go left left down, go 5 left 2 down
 # go word left, go 2 words right
@@ -52,8 +58,8 @@ indent [more]: edit.indent_more()
 (indent less | out dent): edit.indent_less()
 
 # Delete
-clear left: edit.delete()
-clear right: user.delete_right()
+#clear left: edit.delete()
+#clear right: user.delete_right()
 
 clear up:
     edit.extend_line_up()
@@ -72,9 +78,9 @@ clear word right:
     edit.delete()
 
 # Copy
-copy that: edit.copy()
-copy word left: user.copy_word_left()
-copy word right: user.copy_word_right()
+copy this$: edit.copy()
+#copy word left: user.copy_word_left()
+#copy word right: user.copy_word_right()
 
 #to do: do we want these variants, seem to conflict
 # copy left:
@@ -110,7 +116,7 @@ cut word right: user.cut_word_right()
 #     edit.cut()
 
 # Paste
-(pace | paste) that: edit.paste()
+(pace | paste) this: edit.paste()
 (pace | paste) enter:
     edit.paste()
     key(enter)
@@ -132,7 +138,7 @@ padding: user.insert_between(" ", " ")
     insert(" ")
 
 # Undo/redo
-undo that: edit.undo()
+#undo that: edit.undo()
 redo that: edit.redo()
 
 # Save

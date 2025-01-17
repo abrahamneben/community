@@ -162,6 +162,7 @@ symbol_key_words = {
     "minus": "-",
     "dash": "-",
     "equals": "=",
+    "equal": "=",
     "plus": "+",
     "grave": "`",
     "tilde": "~",

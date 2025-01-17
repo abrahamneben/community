@@ -1,3 +1,6 @@
+# mac head tracking
+toggle tracking: key(cmd-f15)
+
 control mouse: tracking.control_toggle()
 control off: user.mouse_sleep()
 zoom mouse: tracking.control_zoom_toggle()

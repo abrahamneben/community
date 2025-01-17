@@ -1,10 +1,11 @@
 from typing import Any, Callable, Optional, Sequence, Type
 
-from talon import Module, app, cron, ctrl, settings, ui
+from talon import Module, app, cron, ctrl, settings, ui, actions
 from talon.canvas import Canvas
 from talon.skia.canvas import Canvas as SkiaCanvas
 from talon.skia.imagefilter import ImageFilter
 from talon.types import Rect
+from subprocess import call
 
 mod = Module()
 
@@ -71,11 +72,8 @@ def show_subtitle(text: str):
     """Show subtitle"""
     if not setting_show():
         return
-    clear_canvases()
-    screens = get_screens()
-    for screen in screens:
-        canvas = show_text_on_screen(screen, text)
-        canvases.append(canvas)
+
+    actions.app.notify(text)
 
 
 def get_screens() -> Sequence[ui.Screen]:
