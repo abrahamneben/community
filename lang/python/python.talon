@@ -53,3 +53,47 @@ import <user.code_libraries>:
     key(end enter)
 
 from import: user.insert_between("from ", " import ")
+
+type bool: ": bool"
+type int: ": int"
+type list: ": list["
+
+push dock string: user.insert_between("\"\"\"","\"\"\"")
+push comment: "# "
+pie lint disable next: "# pylint: disable-next="
+pie lint disable: "# pylint: disable="
+
+push self: "self."
+push funk: user.insert_between("def ","(): ")
+push block:
+    edit.line_end()
+    "\n"
+push print: user.insert_between("print(\"","\")")
+
+end state:
+    edit.line_end()
+    "\n"
+
+push gets: " = "
+
+num pie array: "np.array("
+num pie log ten: "np.log10("
+num pie linn space: "np.linspace("
+num pie dee be: user.insert_between("20*np.log10(",")")
+num pie range: "np.arange("
+num pie cosine: "np.cos("
+num pie exponent: user.insert_between("np.exp(1j*",")")
+num pie tau: "2*np.pi"
+num pie absolute: "np.abs("
+num pie real: "np.real("
+num pie image: "np.imag("
+as int: ".astype(np.int32)"
+
+matt plot: "plt.plot("
+matt plot figure: "plt.figure("
+matt plot label why: user.insert_between("plt.ylabel(\"","\")")
+matt plot label ex: user.insert_between("plt.xlabel(\"","\")")
+matt plot limit ex: user.insert_between("plt.xlim([","])")
+matt plot limit why: user.insert_between("plt.ylim([","])")
+matt plot save: user.insert_between("plt.savefig(\"","\", bbox_inches=\"tight\")")
+matt plot grid: "plt.grid(which='both')"

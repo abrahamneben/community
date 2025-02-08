@@ -21,9 +21,13 @@ push sub bullet add:
 
 new phrase: ". "
 
-{user.markdown_code_block_language} block:
-    user.insert_snippet("```{markdown_code_block_language}\n$0\n```")
+push code block:
+    user.insert_between("```\n","\n```")
+
+push code inline:
+    user.insert_between("`","`")
 
 link:
     "[]()"
     key(left:3)
+

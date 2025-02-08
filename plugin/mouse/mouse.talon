@@ -1,10 +1,10 @@
-# mac head tracking
-toggle tracking: key(cmd-f15)
+# mac head tracking#
+face tracking: key(cmd-f15)
 
 control mouse: tracking.control_toggle()
 control off: user.mouse_sleep()
 zoom mouse: tracking.control_zoom_toggle()
-camera overlay: tracking.control_debug_toggle()
+camera overlay: tr.classacking.control_debug_toggle()
 run calibration: tracking.calibrate()
 touch:
     # close zoom if open
@@ -16,12 +16,12 @@ touch:
     # Touch automatically ends left drags so this is for right drags specifically
     user.mouse_drag_end()
 
-righty:
-    # close zoom if open
-    tracking.zoom_cancel()
-    mouse_click(1)
-    # close the mouse grid if open
-    user.grid_close()
+# righty:
+#     # close zoom if open
+#     tracking.zoom_cancel()
+#     mouse_click(1)
+#     # close the mouse grid if open
+    # user.grid_close()
 
 mid click:
     # close zoom if open
@@ -38,7 +38,7 @@ mid click:
 #shift
 #super = windows key
 <user.modifiers> touch:
-    # close zoom if open
+    # close zoom if openr
     tracking.zoom_cancel()
     key("{modifiers}:down")
     mouse_click(0)
@@ -68,7 +68,7 @@ mid click:
     mouse_click()
     # close the mouse grid
     user.grid_close()
-left drag | drag | drag start:
+drag start:
     # close zoom if open
     tracking.zoom_cancel()
     user.mouse_drag(0)
@@ -141,3 +141,4 @@ curse no:
 # To scroll with a hiss sound, set mouse_enable_hiss_scroll to true in settings.talon
 mouse hiss up: user.hiss_scroll_up()
 mouse hiss down: user.hiss_scroll_down()
+mouse hiss off: user.hiss_scroll_off()

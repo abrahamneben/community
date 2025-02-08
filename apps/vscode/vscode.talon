@@ -52,6 +52,8 @@ hunt case: user.vscode("toggleFindCaseSensitive")
 hunt regular: user.vscode("toggleFindRegex")
 hunt replace: user.vscode("editor.action.startFindReplaceAction")
 hunt replace go: key(cmd-enter)
+hunt last: user.vscode("search.action.focusPreviousSearchResult")
+hunt next: user.vscode("search.action.focusNextSearchResult")
 
 
 # file actions
@@ -59,6 +61,8 @@ folder delete:
     user.vscode("dynoFileUtils.deleteFolder")
 file create:
     user.vscode("dynoFileUtils.newItemsAtCurrentPath")
+file create root:
+    user.vscode("dynoFileUtils.newItemsAtRoot")
 file rename:
     user.vscode("dynoFileUtils.renameFile")
 file move:
@@ -68,6 +72,9 @@ file clone:
 file delete:
     user.vscode("dynoFileUtils.deleteFile")
 file open: user.vscode("workbench.action.files.openFileFolder")
+
+# file copy path: user.vscode("copyFilePath")
+file copy path: user.vscode("copyRelativeFilePath")
 
 #code navigation
 # (go declaration | follow): user.vscode("editor.action.revealDefinition")
@@ -87,11 +94,11 @@ jump line <number>:
     key(enter)
 
 # editor focus
-focus file one: user.vscode("workbench.action.focusFirstEditorGroup")
-focus file: user.vscode("workbench.action.focusFirstEditorGroup")
-focus file two: user.vscode("workbench.action.focusSecondEditorGroup")
-focus file three: user.vscode("workbench.action.focusThirdEditorGroup")
-focus file four: user.vscode("workbench.action.focusFourthEditorGroup")
+file focus one: user.vscode("workbench.action.focusFirstEditorGroup")
+file focus: user.vscode("workbench.action.focusFirstEditorGroup")
+file focus two: user.vscode("workbench.action.focusSecondEditorGroup")
+file focus three: user.vscode("workbench.action.focusThirdEditorGroup")
+file focus four: user.vscode("workbench.action.focusFourthEditorGroup")
 file move left: user.vscode("workbench.action.moveEditorToPreviousGroup")
 file move right: user.vscode("workbench.action.moveEditorToNextGroup")
 
@@ -99,7 +106,7 @@ file move right: user.vscode("workbench.action.moveEditorToNextGroup")
 layout one file: user.vscode('workbench.action.editorLayoutSingle')
 layout two files: user.vscode('workbench.action.editorLayoutTwoColumns')
 layout three files: user.vscode('workbench.action.editorLayoutThreeColumns')
-# close other files: user.vscode("workbench.action.closeOtherEditors")
+close other files: user.vscode("workbench.action.closeOtherEditors")
 
 # terminal focus
 term focus: user.vscode("workbench.action.terminal.focus")
@@ -109,13 +116,20 @@ term focus three: user.vscode("workbench.action.terminal.focusAtIndex3")
 term split: user.vscode("workbench.action.terminal.split")
 term kill: user.vscode("workbench.action.terminal.kill")
 
-term place bottom: user.vscode("workbench.action.positionPanelBottom")
-term place right: user.vscode("workbench.action.positionPanelRight")
-term toggle max: user.vscode("workbench.action.toggleMaximizedPanel")
+term place bottom:
+    user.vscode("workbench.action.positionPanelBottom")
+    user.vscode("workbench.action.terminal.focus")
+term place right:
+    user.vscode("workbench.action.positionPanelRight")
+    user.vscode("workbench.action.terminal.focus")
+term toggle max:
+    user.vscode("workbench.action.toggleMaximizedPanel")
+    user.vscode("workbench.action.terminal.focus")
 term hide: user.vscode("workbench.action.closePanel")
 
 term scroll up: user.vscode("workbench.action.terminal.scrollUpPage")
 term scroll down: user.vscode("workbench.action.terminal.scrollDownPage")
+term clear: key(cmd-k)
 
 # chat
 chat focus: user.vscode("workbench.panel.chat.view.copilot.focus")
@@ -124,7 +138,7 @@ chat focus: user.vscode("workbench.panel.chat.view.copilot.focus")
 cell next: user.vscode("notebook.focusNextEditor")
 cell last: user.vscode("notebook.focusPreviousEditor")
 cell run above: user.vscode("notebook.cell.executeCellsAbove")
-cell run: user.vscode("notebook.cell.execute")
+cell run: key(shift-enter)
 
 # editing actions
 select highlights: user.vscode("editor.action.selectHighlights")
@@ -142,3 +156,11 @@ open header file:
 open source file:
     user.vscode_with_arg("workbench.action.tasks.runTask", "Open Implementation File")
 
+zoom larger:
+    user.menu_select('View|Appearance|Zoom In')
+zoom smaller:
+    user.menu_select('View|Appearance|Zoom Out')
+zoom reset:
+    user.menu_select('View|Appearance|Reset Zoom [⌘NumPad0]')
+
+comment line: key(cmd-/)

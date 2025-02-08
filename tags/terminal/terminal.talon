@@ -18,6 +18,9 @@ language: en
 ^<user.terminal_commands>$:
     "{terminal_commands}\n"
 
+git commit:
+    user.insert_between("git commit -n -m \"", "\"")
+
 
 cancel: key(ctrl-c)
 
@@ -31,13 +34,15 @@ vim save:
     key(enter)
 
 ^back search$:
-    " back_search\n"
+    key(ctrl-r)
+
 
 # personal network
 connect mac mini: "ssh aneben@macmini.thinlens.net"
 
 # navigation
-change directory: "cd "
+change dir: "cd "
+change dir up: "cd .."
 list files: "ll\n"
 
 # docker
@@ -46,8 +51,16 @@ docker force up: "docker-compose up -d --force-recreate"
 # bazel
 bazel build: "bazel build "
 bazel test: "bazel test "
+bazel verbose: "--config=verbose "
+bazel no cache: "--cache_test_results=no "
 
 # running commands
 run last:
     key(up)
     key(enter)
+
+
+draft command:
+    key(ctrl-u)
+    key(cmd-n)
+    key(cmd-v)

@@ -14,3 +14,7 @@ talon home: /Users/aneben/.talon
 talon recordings: /Users/aneben/.talon/recordings
 talon user: /Users/aneben/.talon/user
 home: /Users/aneben
+temp: /tmp/
+chromatic: /Users/aneben/Chromatic
+data: /Users/aneben/data/
+media: /Volumes/media/

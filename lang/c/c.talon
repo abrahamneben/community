@@ -24,6 +24,7 @@ settings():
     user.code_protected_variable_formatter = "SNAKE_CASE"
     user.code_public_variable_formatter = "SNAKE_CASE"
 
+
 # NOTE: migrated from generic, as they were only used here, though once cpp support is added, perhaps these should be migrated to a tag together with the commands below
 state include: insert("#include ")
 state include system: user.insert_between("#include <", ">")
@@ -58,30 +59,30 @@ state default: "default:\nbreak;"
 #best used with a push like command
 #the below example may not work in editors that automatically add the closing brace
 #if so uncomment the two lines and comment out the rest accordingly
-push braces:
+push block:
     edit.line_end()
-    #insert("{")
-    #key(enter)
-    insert("{}")
-    edit.left()
+    insert("{")
     key(enter)
+
+end state:
+    edit.line_end()
+    insert(";")
     key(enter)
-    edit.up()
 
 # Declare variables or structs etc.
 # Ex. * int myList
-<user.c_variable> <phrase>:
-    insert("{c_variable} ")
-    insert(user.formatted_text(phrase, "PRIVATE_CAMEL_CASE,NO_SPACES"))
+# <user.c_variable> <phrase>:
+#     insert("{c_variable} ")
+#     insert(user.formatted_text(phrase, "PRIVATE_CAMEL_CASE,NO_SPACES"))
 
-<user.c_variable> <user.letter>: insert("{c_variable} {letter} ")
+# <user.c_variable> <user.letter>: insert("{c_variable} {letter} ")
 
 # Ex. (int *)
 cast to <user.c_cast>: "{c_cast}"
 standard cast to <user.stdint_cast>: "{stdint_cast}"
-<user.c_types>: "{c_types}"
+type <user.c_types>: "{c_types}"
 <user.c_pointers>: "{c_pointers}"
-<user.c_keywords>: "{c_keywords}"
+key <user.c_keywords>: "{c_keywords}"
 <user.c_signed>: "{c_signed}"
 standard <user.stdint_types>: "{stdint_types}"
 int main: user.insert_between("int main(", ")")
@@ -90,3 +91,13 @@ toggle includes: user.code_toggle_libraries()
 include <user.code_libraries>:
     user.code_insert_library(code_libraries, "")
     key(end enter)
+
+# operators
+op left shift: " << "
+op right shift: " >> "
+op not equal: " != "
+op is equal: " == "
+
+block if: "if ("
+block for: "for ("
+push comment: "// "

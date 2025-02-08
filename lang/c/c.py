@@ -7,6 +7,7 @@ ctx.matches = r"""
 code.language: c
 """
 
+
 ctx.lists["self.c_pointers"] = {
     "pointer": "*",
     "pointer to pointer": "**",
@@ -26,6 +27,7 @@ ctx.lists["self.c_keywords"] = {
     "static": "static",
     "volatile": "volatile",
     "register": "register",
+    "constant": "const",
 }
 
 ctx.lists["self.stdint_types"] = {
@@ -59,6 +61,8 @@ ctx.lists["self.c_types"] = {
     "num": "enum",
     "union": "union",
     "float": "float",
+    "frack twenty four": "frac24_t",
+    "int thirty two": "int32_t",
 }
 
 ctx.lists["user.code_libraries"] = {
@@ -357,7 +361,7 @@ class UserActions:
         actions.auto_insert("false")
 
     def code_comment_line_prefix():
-        actions.auto_insert("//")
+        actions.auto_insert("// ")
 
     def code_insert_function(text: str, selection: str):
         if selection:

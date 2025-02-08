@@ -73,7 +73,13 @@ def show_subtitle(text: str):
     if not setting_show():
         return
 
-    actions.app.notify(text)
+    # actions.app.notify(text)
+
+    clear_canvases()
+    screens = get_screens()
+    for screen in screens:
+        canvas = show_text_on_screen(screen, text)
+        canvases.append(canvas)
 
 
 def get_screens() -> Sequence[ui.Screen]:
@@ -120,11 +126,11 @@ def on_draw(c: SkiaCanvas, screen: ui.Screen, text: str):
     c.paint.color = setting_color()
     c.draw_text(text, x, y)
 
-    # Outline
-    c.paint.imagefilter = None
-    c.paint.style = c.paint.Style.STROKE
-    c.paint.color = setting_color_outline()
-    c.draw_text(text, x, y)
+    # # Outline
+    # c.paint.imagefilter = None
+    # c.paint.style = c.paint.Style.STROKE
+    # c.paint.color = setting_color_outline()
+    # c.draw_text(text, x, y)
 
 
 def calculate_timeout(text: str) -> int:

@@ -66,3 +66,25 @@ phrase: suppress error
 with suppress(AttributeError):
     $0
 ---
+
+name: talonPreamble
+phrase: preamble
+-
+import matplotlib
+%matplotlib inline
+import matplotlib.pyplot as plt
+
+matplotlib.rcParams.update({
+'font.size': 14,
+'figure.facecolor': 'white',
+'axes.facecolor': 'white',
+'savefig.facecolor':'white'
+})
+
+import numpy as np
+from scipy import signal
+import soundfile as sf
+from tqdm import tqdm
+p = lambda arr: ','.join(map(str,arr))
+np.set_printoptions(edgeitems=30, linewidth = 1000000)
+---
