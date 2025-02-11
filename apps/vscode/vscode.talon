@@ -164,3 +164,24 @@ zoom reset:
     user.menu_select('View|Appearance|Reset Zoom [⌘NumPad0]')
 
 comment line: key(cmd-/)
+
+save pi cat out:
+    user.vscode("workbench.action.terminal.focus")
+    sleep(500ms)
+    key(cmd-a)
+    key(cmd-c)
+    "pbpaste > /tmp/python_catalyst_output.txt;\n"
+
+diff pi cat out:
+    user.vscode("workbench.action.terminal.focus")
+    sleep(500ms)
+    key(cmd-a)
+    key(cmd-c)
+    "pbpaste > /tmp/python_catalyst_output.txt; diff_python_catalyst_output /tmp/python_catalyst_output.txt\n"
+
+diff pi cat last out:
+    user.vscode("workbench.action.terminal.focus")
+    sleep(500ms)
+    "diff_python_catalyst_output /tmp/python_catalyst_output.txt\n"
+
+

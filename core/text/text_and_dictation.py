@@ -119,8 +119,7 @@ def word(m) -> str:
             actions.dictate.replace_words(actions.dictate.parse_words(m.word))
         )
 
-
-@mod.capture(rule="({user.vocabulary} | <phrase>)+")
+@mod.capture(rule="({user.vocabulary} | <phrase> | <user.abbreviation>)+")
 def text(m) -> str:
     """A sequence of words, including user-defined vocabulary."""
     return format_phrase(m)

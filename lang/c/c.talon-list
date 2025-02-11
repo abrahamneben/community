@@ -1,7 +1,5 @@
-list: user.vocabulary
-code.language: c
+list: user.c_vocab
 -
-bool:Abraham
-init
-in it: init
-hello world:Abraham
+
+# types
+abraham: intp

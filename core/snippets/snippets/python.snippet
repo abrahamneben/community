@@ -67,7 +67,7 @@ with suppress(AttributeError):
     $0
 ---
 
-name: talonPreamble
+name: jupiterPreamble
 phrase: preamble
 -
 import matplotlib
@@ -87,4 +87,18 @@ import soundfile as sf
 from tqdm import tqdm
 p = lambda arr: ','.join(map(str,arr))
 np.set_printoptions(edgeitems=30, linewidth = 1000000)
+---
+
+
+name: matplotlibFigure
+phrase: matt plot figure
+-
+plt.figure($1, figsize=(, ))
+---
+
+
+name: matplotlibSaveFig
+phrase: matt plot save fig
+-
+plt.savefig($1, bbox_inches="tight")
 ---

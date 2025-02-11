@@ -17,6 +17,7 @@ ctx.lists["self.git_commands"] = {
     "git stash pop": "git stash pop",
     "git branch": "gb\n",
     "get branch new": "git checkout -b ",
+    "get branch delete": "git branch# -D ",
     "git fetch": "git fetch\n",
     "git push": "git push",
     "git pull": "git pull",
@@ -50,6 +51,7 @@ ctx.lists["self.utility_commands"] = {
     "continue rebase": "continue_rebase\n",
     "run again": "run_again\n",
     "go next conflict": "go_next_conflict\n",
+    "term run saved": "source /tmp/saved_command.sh\n",
 }
 
 ctx.lists["self.chromatic_commands"] = {

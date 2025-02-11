@@ -10,6 +10,7 @@ language: en
     "git reset HEAD~{number_small}"
 
 ^<user.utility_commands>$:
+    key(cmd-k)
     "{utility_commands}\n"
 
 ^chromatic <user.chromatic_commands>$:
@@ -60,7 +61,11 @@ run last:
     key(enter)
 
 
-draft command:
+term draft:
     key(ctrl-u)
     key(cmd-n)
     key(cmd-v)
+
+term save:
+    key(ctrl-u)
+    "pbpaste > /tmp/saved_command.sh\n"

@@ -1,0 +1,56 @@
+list: user.python_vocab
+-
+
+# statements
+import: "import "
+return: "return "
+comment: "# "
+pie lint disable next: "# pylint: disable-next="
+pie lint disable: "# pylint: disable="
+print: "print"
+print pie: "print(f\"[pyt] \")"
+
+# operators
+gets: " = "
+less than: <=
+greater than: >=
+left shift: <<
+right shift: >>
+plus equal: " += "
+
+# types
+bool
+tuple: tuple[
+list: list[
+dict: dict[
+string: str
+num pie en dee array: np.ndarray
+num pie int thirty two: np.int32
+
+# numpy functions
+imaginary unit: 1j
+dee bee: 20*np.log10(np.abs(
+num pie array: np.array([
+num pie log ten: np.log10(
+num pie linn space: np.linspace(
+num pie range: np.arange(
+num pie cosine: np.coscos(
+num pie exponent: np.exp(
+num pie pie: np.pi
+num pie tau: 2*np.pi
+num pie abs: np.abs(
+num pie real: np.real(
+num pie image: np.imag(
+as type: .astype(
+num pie zeros: np.zeros(
+
+# matplotlib functions
+matt plot: plt.plot(
+matt plot why label: plt.ylabel(
+matt plot ex label: plt.xlabel(
+matt plot ex lim: plt.xlim([
+matt plot why lim: plt.ylim([
+matt plot grid: "plt.grid(which=\"both\")"
+
+self taught: self.
+self dot: self.

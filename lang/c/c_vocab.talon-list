@@ -1,0 +1,35 @@
+list: user.c_vocab
+-
+
+# preproc
+import: "#import"
+define: "#define"
+
+
+# types
+int
+bool
+void
+float
+char
+byte: uint8_t
+type def: typedef
+int thirty two: int32_t
+frack twenty four: frac24_t
+standard vector: std::vector
+
+# operators
+gets: " = "
+left shift: " << "
+right shift: " >> "
+
+standard list: std::list
+static cast: static_cast
+cast int: (int)
+
+reinterpret cast: reinterpret_cast
+const cast: const_cast
+print eff cat: "printf(\"[cat] \", );"
+print eff: printf
+
+static

@@ -20,6 +20,7 @@ not title: /terminal/i
     user.vscode("workbench.action.terminal.focus")
     sleep(1000ms)
     key(ctrl-c)
+    key(cmd-k)
     "{utility_commands}\n"
 
 ^chromatic <user.chromatic_commands>$:
