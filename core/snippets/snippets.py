@@ -71,6 +71,7 @@ class Actions:
     def get_snippet(name: str) -> Snippet:
         """Get snippet named <name> for the active language"""
         snippets: list[Snippet] = actions.user.get_snippets(name)
+        print("debug 1")
         return get_preferred_snippet(snippets)
 
     def get_insertion_snippets(name: str) -> list[InsertionSnippet]:

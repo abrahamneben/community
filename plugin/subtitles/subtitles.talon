@@ -1,6 +1,6 @@
 settings():
     # Show subtitles?
-    user.subtitles_show = false
+    user.subtitles_show = true
     # Screens on which to show subtitles:
     # "all" - all screens
     # "main" - main screen as configured in OS
@@ -8,7 +8,7 @@ settings():
     # "focus" - screen containing active/focused window/app
     user.subtitles_screens = "main"
     # 100 px maximum subtitle font size
-    user.subtitles_size = 100
+    user.subtitles_size = 60
     # White subtitle color
     user.subtitles_color = "ffffff"
     # Slightly dark subtitle outline

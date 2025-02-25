@@ -1,3 +1,4 @@
+
 settings():
     # Adjust the scale of the imgui
     imgui.scale = 1.3
@@ -80,7 +81,7 @@ settings():
 
     # Uncomment to insert text longer than 10 characters (customizable) by pasting from
     # the clipboard. This is often faster than typing.
-    # user.paste_to_insert_threshold = 10
+    user.paste_to_insert_threshold = 20
 
     # Uncomment to enable context-sensitive dictation. This determines how to format
     # (capitalize, space) dictation-mode speech by selecting & copying surrounding text
@@ -119,3 +120,6 @@ settings():
 # By default you need to say "numb one" to write "1". If you uncomment this,
 # you can say "one" to write "1".
 # tag(): user.unprefixed_numbers
+
+tag(): user.cursorless_use_community_snippets
+

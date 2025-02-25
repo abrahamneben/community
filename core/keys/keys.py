@@ -10,6 +10,7 @@ mod.list("function_key", desc="All function keys")
 mod.list("special_key", desc="All special keys")
 mod.list("keypad_key", desc="All keypad keys")
 mod.list("punctuation", desc="words for inserting punctuation into text")
+mod.list("dictation_symbol_key_words", desc="words for inserting symbols into dictation mode text")
 
 
 @mod.capture(rule="{self.modifier_key}+")
@@ -140,6 +141,7 @@ punctuation_words = {
     "R paren": ")",
     "right paren": ")",
 }
+
 symbol_key_words = {
     "dot": ".",
     "point": ".",
@@ -159,9 +161,11 @@ symbol_key_words = {
     "right bracket": "]",
     "slash": "/",
     "backslash": "\\",
+    "blash": "\\",
     "minus": "-",
     "dash": "-",
     "equals": "=",
+    "equal": "=",
     "plus": "+",
     "grave": "`",
     "tilde": "~",
@@ -194,10 +198,19 @@ symbol_key_words = {
     "double quote": '"',
     # Currencies
     "dollar": "$",
-    "pound": "£",
+    "pound": "#",
+}
+
+dictation_symbol_key_words = {
+    "slash": "/",
+    "dash": "-",
+    "tilde": "~",
+    "bang": "!",
+    "percent": "%",
 }
 
 # make punctuation words also included in {user.symbol_keys}
 symbol_key_words.update(punctuation_words)
 ctx.lists["self.punctuation"] = punctuation_words
 ctx.lists["self.symbol_key"] = symbol_key_words
+ctx.lists["self.dictation_symbol_key_words"] = dictation_symbol_key_words

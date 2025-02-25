@@ -1,0 +1,20 @@
+list: user.system_paths
+hostname: Abraham-Neben-Husky
+-
+user: /Users/aneben
+desktop: /Users/aneben/Desktop
+desk: /Users/aneben/Desktop
+documents: /Users/aneben/Documents
+docks: /Users/aneben/Documents
+downloads: /Users/aneben/Downloads
+music: /Users/aneben/Music
+pictures: /Users/aneben/Pictures
+videos: /Users/aneben/Videos
+talon home: /Users/aneben/.talon
+talon recordings: /Users/aneben/.talon/recordings
+talon user: /Users/aneben/.talon/user
+home: /Users/aneben
+temp: /tmp/
+chromatic: /Users/aneben/Chromatic
+data: /Users/aneben/data/
+media: /Volumes/media/

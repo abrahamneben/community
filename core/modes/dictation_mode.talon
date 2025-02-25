@@ -1,7 +1,7 @@
 mode: dictation
 -
 ^press <user.modifiers>$: key(modifiers)
-^press <user.keys>$: key(keys)
+# ^symbol <user.symbol_key>$: key(symbol_key)
 
 # Everything here should call `user.dictation_insert()` instead of `insert()`, to correctly auto-capitalize/auto-space.
 <user.raw_prose>: user.dictation_insert(raw_prose)
@@ -25,7 +25,7 @@ go left <number_small> (word | words):
     repeat(number_small - 1)
 go right <number_small> (word | words):
     edit.word_right()
-    repeat(number_small - 1)
+    repeat(number_small - three )
 go line start: edit.line_start()
 go line end: edit.line_end()
 
@@ -42,9 +42,10 @@ select left <number_small> (character | characters):
 select right <number_small> (character | characters):
     edit.extend_right()
     repeat(number_small - 1)
-clear left <number_small> (word | words):
+clear [<number_small>] (word | words):
     edit.extend_word_left()
-    repeat(number_small - 1)
+    number = number_small or 1
+    repeat(number - 1)
     edit.delete()
 clear right <number_small> (word | words):
     edit.extend_word_right()
