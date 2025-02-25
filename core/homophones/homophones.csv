@@ -166,6 +166,9 @@ cruel,crewel
 cruise,crews
 current,currant
 cursor,curser
+signet,cygnet
+sine,sign
+symbol,cymbal
 Cyprus,cypress
 damn,dam
 Dane,deign
@@ -403,6 +406,8 @@ Nice,niece
 night,knight
 no,know
 none,nun
+none,nun,noun
+knows,nose
 not,knot
 oh,owe
 one,won
@@ -484,8 +489,8 @@ real,reel
 residents,residence
 rest,wrest
 review,revue
-right,write,rite
-rights,writes,rites
+right,write
+rights,writes
 rigor,rigger
 ring,wring
 road,rode,rowed
@@ -626,7 +631,6 @@ very,vary
 vice,vise
 vile,vial
 wade,weighed
-wait,weight
 waiter,wader
 Wales,whales,wails
 walk,wok
@@ -634,6 +638,10 @@ want,wont
 war,wore
 ward,word
 waste,waist
+weight,wait
+weighting,waiting
+weighted,waited
+wears,where's,wares
 wave,waive
 wax,whacks
 way,weigh,whey
@@ -651,7 +659,6 @@ wet,whet
 whale,wail,wale
 wheeled,wield
 where,wear,ware
-whether,weather,wether
 whether,weather
 which,witch
 while,wile
@@ -675,3 +682,5 @@ yoke,yolk
 you,yew,ewe
 you'll,Yule
 your,you're,yore
+temp,tmp
+mic,mike
