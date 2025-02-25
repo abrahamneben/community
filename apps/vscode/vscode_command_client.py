@@ -21,10 +21,10 @@ app: vscode
 ctx.tags = ["user.command_client"]
 
 
-def command_server_or_client_fallback(command_id: str, wait: bool):
+def command_server_or_client_fallback(command_id: str, wait: bool, command_arg: str | None = None):
     """Execute command via command server, falling back to command palette if directory not present."""
     try:
-        run_command(command_id, wait_for_finish=wait)
+        run_command(command_id, command_arg, wait_for_finish=wait)
     except NoFileServerException:
         actions.user.command_palette()
         actions.user.paste(command_id)
@@ -46,6 +46,11 @@ class Actions:
         """Execute command via vscode command server, if available, or fallback
         to command palette."""
         command_server_or_client_fallback(command_id, False)
+
+    def vscode_with_arg(command_id: str, command_arg: str):
+        """Execute command via vscode command server, if available, or fallback
+        to command palette."""
+        command_server_or_client_fallback(command_id, False, command_arg)
 
     def vscode_and_wait(command_id: str):
         """Execute command via vscode command server, if available, and wait
