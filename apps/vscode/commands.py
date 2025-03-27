@@ -36,6 +36,7 @@ ctx.lists["self.git_commands"] = {
     "change pass file": "d\n",
     "change add file": "a\n",
     "git rebase origin develop": "git rebase origin/develop",
+    "git rebase upstream main": "git rebase upstream/main",
     "git rebase origin": "git rebase origin/",
     "git rebase continue": "git rebase --continue",
     "git checkout fuzzy": "git fzc",
@@ -48,8 +49,8 @@ ctx.lists["self.git_commands"] = {
 
 ctx.lists["self.utility_commands"] = {
     "source shell config": "source ~/.zshrc",
-    "bootstrap install": "pushd ~/bootstrap; python install.py; popd\n",
-    "bootstrap save": "pushd ~/bootstrap; python save.py; popd\n",
+    "bootstrap install": "pushd ~/repos/bootstrap; python install.py; popd\n",
+    "bootstrap save": "pushd ~/repose/bootstrap; python save.py; popd\n",
     "open repo": "open_repo\n",
     "open pull": "open_pull\n",#
     "rebase continue": "continue_rebase\n",

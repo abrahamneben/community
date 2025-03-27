@@ -57,6 +57,7 @@ debug
 denoiser
 dict
 diff
+differencer
 disc: disk
 duel: dual
 elac
@@ -91,7 +92,6 @@ lut
 man: main
 maris: mars
 mars
-min
 mod
 nanopb
 nmap
@@ -106,6 +106,7 @@ or boats: verbose
 pain
 pars: parse
 phased
+faced: phased
 phi
 proto
 protobuf
@@ -139,10 +140,13 @@ prev
 seed
 sed: seed
 beampattern
-being former: beampattern
 bin pattern: beampattern
 beamformer
+bin former: beamformer
+being former: beamformer
 theme former: beamformer
+beamform
+pine form: beamform
 jupyter
 jupiter: jupyter
 gelly: jelly
@@ -153,3 +157,12 @@ mewtable: mutable
 mewdable: mutable
 pair
 par: pair
+lessen: listen
+zooom
+zoom
+multi
+malta: multi
+comp
+camp: comp
+insure: ensure
+mac minnie: macmini

@@ -189,7 +189,7 @@ notebook kill:
     key(enter)
 
 go conflict:
-    user.vscode("abraham_utils.gotoNextConflict")
+    user.vscode("abraham_utils.goNextConflict")
 
 # editing actions
 select highlights: user.vscode("editor.action.selectHighlights")

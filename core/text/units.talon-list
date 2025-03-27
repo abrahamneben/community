@@ -12,6 +12,10 @@ millimeter: mm
 millimeters: mm
 kilometer: km
 kilometers: km
+milliseconds: ms
+millisecond: ms
+microseconds: us
+microsecond: us
 second: sec
 seconds: sec
 minute: min

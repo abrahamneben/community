@@ -1,31 +1,31 @@
 code.language: markdown
 code.language: plaintext
 -
-push header [one]:
+snip header [one]:
     edit.line_end()
     "\n# "
-push header two:
+snip header two:
     edit.line_end()
     "\n## "
-push header three:
+snip header three:
     edit.line_end()
     "\n### "
 
 
-push bullet:
+snip bullet:
     edit.line_end()
     "\n* "
-push sub bullet add:
+snip sub bullet:
     edit.line_end()
     "\n  - "
 
 new phrase: ". "
 
-push code block:
-    user.insert_between("```\n","\n```")
+# snip code block:
+#     user.insert_between("```\n","\n```")
 
-push code inline:
-    user.insert_between("`","`")
+# snip code inline:
+#     user.insert_between("`","`")
 
 link:
     "[]()"

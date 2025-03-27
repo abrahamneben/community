@@ -445,3 +445,4 @@ plt,pie plot
 stft,short time
 istft,inverse short time
 dsp,dig sig prock
+comp,compensation
