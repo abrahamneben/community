@@ -81,7 +81,7 @@ settings():
 
     # Uncomment to insert text longer than 10 characters (customizable) by pasting from
     # the clipboard. This is often faster than typing.
-    user.paste_to_insert_threshold = 20
+    user.paste_to_insert_threshold = 6
 
     # Uncomment to enable context-sensitive dictation. This determines how to format
     # (capitalize, space) dictation-mode speech by selecting & copying surrounding text
@@ -121,5 +121,4 @@ settings():
 # you can say "one" to write "1".
 # tag(): user.unprefixed_numbers
 
-tag(): user.cursorless_use_community_snippets
 

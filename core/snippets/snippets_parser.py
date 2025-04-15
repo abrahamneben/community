@@ -335,7 +335,7 @@ def parse_variable(
 
 def parse_body(text: str) -> Union[str, None]:
     # Find first line that is not empty. Preserve indentation.
-    text = text.replace("\---", "---")
+    text = text.replace("\"" + "---", "---")
 
     match_leading = re.search(r"^[ \t]*\S", text, flags=re.MULTILINE)
 

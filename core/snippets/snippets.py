@@ -169,6 +169,8 @@ def update_snippets():
 
 
 def update_contexts(language_to_lists: dict[str, SnippetLists]):
+    print(language_to_lists)
+    print('global id is', GLOBAL_ID)
     global_lists = language_to_lists[GLOBAL_ID] or SnippetLists()
 
     for lang, lists in language_to_lists.items():

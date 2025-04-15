@@ -9,6 +9,7 @@ ellipsis: "..."
 arrow: "->"
 dub arrow: "=>"
 equal: "="
+check mark: "✅"
 
 # Insert delimiter pairs
 # <user.delimiter_pair>: user.delimiter_pair_insert(delimiter_pair)

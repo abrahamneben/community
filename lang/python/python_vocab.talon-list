@@ -16,6 +16,8 @@ bool
 tuple
 dict
 array
+enum
+ee num: enum
 string: str
 None
 num pie en dee array: np.ndarray

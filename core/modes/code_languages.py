@@ -33,7 +33,7 @@ code_languages = [
     # Language("jsonl", "json lines", ["jsonl"]),
     Language("kotlin", "kotlin", ["kt"]),
     Language("lua", "lua", ["lua"]),
-    Language("markdown", "mark down", ["md"]),
+    Language("markdown", "markdown", ["md"]),
     # Language("perl", "perl", ["pl"]),
     Language("php", "p h p", ["php"]),
     # Language("powershell", "power shell", ["ps1"]),

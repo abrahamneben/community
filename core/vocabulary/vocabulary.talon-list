@@ -44,8 +44,7 @@ chronics: chronnx
 coallocate
 coallocated
 colouring: coloring
-compressor: wdrc
-compressors: wdrcs
+compressor: WDRC
 constance: constants
 cord: chord
 cords: chords
@@ -75,10 +74,10 @@ game: gain
 gen rule: genrule
 genrule
 git
-gooey: gui
+GUI
+gooey: GUI
 grass ear: GRAS ear
-gui
-guy: gui
+guy: GUI
 hi: high
 in able: enable
 int
@@ -166,3 +165,14 @@ comp
 camp: comp
 insure: ensure
 mac minnie: macmini
+mask
+masque: mask
+combo
+ambo: combo
+enum
+ee num: enum
+borg
+bork: borg
+heart drive: hard drive
+avs code: a vscode
+borg matic: borgmatic

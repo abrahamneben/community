@@ -1,21 +1,21 @@
 code.language: markdown
 code.language: plaintext
 -
-snip header [one]:
+header add:
     edit.line_end()
     "\n# "
-snip header two:
+header two add:
     edit.line_end()
     "\n## "
-snip header three:
+header three add:
     edit.line_end()
     "\n### "
 
 
-snip bullet:
+star add:
     edit.line_end()
     "\n* "
-snip sub bullet:
+sub star add:
     edit.line_end()
     "\n  - "
 
@@ -27,7 +27,7 @@ new phrase: ". "
 # snip code inline:
 #     user.insert_between("`","`")
 
-link:
-    "[]()"
-    key(left:3)
+# link:
+#     "[]()"
+#     key(left:3)
 

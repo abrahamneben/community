@@ -1,18 +1,22 @@
 list: user.website
 -
-talon home page: http://talonvoice.com
-talon slack: http://talonvoice.slack.com/messages/help
-talon wiki: https://talon.wiki/
-talon practice: https://chaosparrot.github.io/talon_practice/
-talon repository search: https://search.talonvoice.com/search/
-amazon: https://www.amazon.com/
-dropbox: https://dropbox.com/
+talon slack: https://app.slack.com/client/T7FPSMV8F/C026KPTJE6T
+talent slack: https://app.slack.com/client/T7FPSMV8F/C026KPTJE6T
 google: https://www.google.com/
 google calendar: https://calendar.google.com
 google maps: https://maps.google.com/
 google scholar: https://scholar.google.com/
-gmail: https://mail.google.com/
 github: https://github.com/
 gist: https://gist.github.com/
 wikipedia: https://en.wikipedia.org/
 youtube: https://www.youtube.com/
+slack: https://app.slack.com/client/T02HDJ7M5E3/C02HU9C0T5H
+notes: https://notes.thinlens.net/
+fastmail: https://app.fastmail.com/mail/Inbox/
+asana: https://app.asana.com/0/home/1202699448769425
+gmail: https://mail.google.com/mail/u/0/
+github actions: https://github.com/GoChromatic/Chromatic/actions/workflows/ci-cd.yml?query=actor%3Aabrahamneben+event%3Apush
+GitHub chromatic: https://github.com/GoChromatic/Chromatic
+claude: https://claude.ai/new
+calendar: https://calendar.google.com/calendar/u/0/r?pli=1
+GitHub pulls: https://github.com/pulls

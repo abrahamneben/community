@@ -335,7 +335,7 @@ rsp,response
 res,result
 ret,return
 rev,revision
-rnd,round
+RnD,round
 rb,ruby
 rs,rust
 sw,soft
@@ -356,6 +356,7 @@ seq,sequence
 sp,service pack
 sid,session id
 sh,shell
+ssh,secure shell
 sc,shellcode
 sig,signal
 sz,size
@@ -442,7 +443,9 @@ PR,pull request
 np,num pie
 np.,num pie dot
 plt,pie plot
-stft,short time
-istft,inverse short time
+FFT,fast fourier
+IFFT,inverse fast fourier
+STFT,short time
+ISTFT,inverse short time
 dsp,dig sig prock
 comp,compensation

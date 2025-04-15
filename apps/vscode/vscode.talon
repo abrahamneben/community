@@ -98,8 +98,8 @@ file source:
 
 #code navigation
 # (go declaration | follow): user.vscode("editor.action.revealDefinition")
-# go back: user.vscode("workbench.action.navigateBack")
-# go forward: user.vscode("workbench.action.navigateForward")
+go back: user.vscode("workbench.action.navigateBack")
+go forward: user.vscode("workbench.action.navigateForward")
 # go implementation: user.vscode("editor.action.goToImplementation")
 # go type: user.vscode("editor.action.goToTypeDefinition")
 # go usage: user.vscode("references-view.find")
@@ -122,6 +122,7 @@ file move right: user.vscode("workbench.action.moveEditorToNextGroup")
 layout one file: user.vscode('workbench.action.editorLayoutSingle')
 layout two files: user.vscode('workbench.action.editorLayoutTwoColumns')
 layout three files: user.vscode('workbench.action.editorLayoutThreeColumns')
+layout four files: user.vscode('workbench.action.editorLayoutFourColumns')
 close other files: user.vscode("workbench.action.closeOtherEditors")
 
 # terminal focus
@@ -148,7 +149,7 @@ term scroll down: user.vscode("workbench.action.terminal.scrollDownPage")
 term clear: key(cmd-k)
 
 # chat
-chat focus: user.vscode("workbench.panel.chat.view.copilot.focus")
+chat focus: user.vscode("roo-cline.SidebarProvider.focus")
 
 # jupyter
 cell comment:
@@ -189,6 +190,8 @@ notebook kill:
     key(enter)
 
 go conflict:
+    user.menu_select('File|Save')
+    sleep(200ms)
     user.vscode("abraham_utils.goNextConflict")
 
 # editing actions
@@ -234,3 +237,5 @@ diff pi cat last out:
     sleep(500ms)
     "diff_python_catalyst_output /tmp/python_catalyst_output.txt\n"
 
+space {user.vscode_spaces}:
+    user.open_vscode_space(vscode_spaces)

@@ -1,6 +1,3 @@
-language: markdown
----
-
 name: link
 phrase: link
 insertionScope: token
@@ -9,6 +6,7 @@ $0.wrapperScope: token
 -
 [$0]($1)
 ---
+
 name: codeQuoteBlock
 phrase: code block
 insertionScope: token
