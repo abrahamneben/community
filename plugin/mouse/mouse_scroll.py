@@ -8,7 +8,7 @@ scroll_job = None
 gaze_job = None
 scroll_dir: Literal[-1, 1] = 1
 scroll_start_ts: float = 0
-hiss_scroll_up = False
+hiss_scroll_direction = "down" # or None
 control_mouse_forced = False
 continuous_scrolling_speed_factor: float = 1.0
 is_continuous_scrolling_vertical: bool = True
@@ -208,13 +208,21 @@ class Actions:
 
     def hiss_scroll_up():
         """Change mouse hiss scroll direction to up"""
-        global hiss_scroll_up
-        hiss_scroll_up = True
+        global hiss_scroll_direction
+        hiss_scroll_direction = "up"
 
     def hiss_scroll_down():
         """Change mouse hiss scroll direction to down"""
-        global hiss_scroll_up
-        hiss_scroll_up = False
+        global hiss_scroll_direction
+        hiss_scroll_direction = "down"
+
+
+
+    def hiss_scroll_off():
+        """Disable mouse hiss scroll"""
+        global hiss_scroll_direction
+        hiss_scroll_direction = None
+
 
 
 @ctx.action_class("user")
@@ -222,9 +230,9 @@ class UserActions:
     def noise_trigger_hiss(active: bool):
         if settings.get("user.mouse_enable_hiss_scroll"):
             if active:
-                if hiss_scroll_up:
+                if hiss_scroll_direction == "up":
                     actions.user.mouse_scroll_up_continuous()
-                else:
+                elif hiss_scroll_direction == "down":
                     actions.user.mouse_scroll_down_continuous()
             else:
                 actions.user.mouse_scroll_stop()

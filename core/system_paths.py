@@ -10,12 +10,12 @@ from pathlib import Path
 from talon import Module, actions, app
 
 mod = Module()
-mod.list("system_paths", desc="List of system paths")
+mod.list("system_path_data", desc="List of system paths")
 
 
 def on_ready():
     # If user.system_paths defined otherwise, don't generate a file
-    if actions.user.talon_get_active_registry_list("user.system_paths"):
+    if actions.user.talon_get_active_registry_list("user.system_path_data"):
         return
 
     hostname = actions.user.talon_get_hostname()
@@ -39,6 +39,7 @@ def on_ready():
         "talon home": talon_home,
         "talon recordings": talon_home / "recordings",
         "talon user": actions.path.talon_user(),
+        "temp": "/tmp/",
     }
 
     if app.platform == "windows":
@@ -56,7 +57,6 @@ def on_ready():
 
     with open(system_paths, "x") as f:
         print("list: user.system_paths", file=f)
-        print(f"hostname: {hostname}", file=f)
         print("-", file=f)
         for spoken_form, path in default_system_paths.items():
             path = str(path)
@@ -64,11 +64,6 @@ def on_ready():
                 path = repr(path)
 
             print(f"{spoken_form}: {path}", file=f)
-
-
-@mod.capture(rule="{user.system_paths}")
-def system_path(m) -> str:
-    return m.system_paths
 
 
 app.register("ready", on_ready)

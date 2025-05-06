@@ -20,6 +20,11 @@ class MainActions:
     def insert(text):
         threshold = settings.get("user.paste_to_insert_threshold")
         if 0 <= threshold < len(text):
-            actions.user.paste(text)
+            if text[-1] == "\n":
+                actions.user.paste(text[:-1])
+                actions.key("enter")
+            else:
+                actions.user.paste(text)
             return
+
         actions.next(text)
