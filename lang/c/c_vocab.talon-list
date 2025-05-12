@@ -1,0 +1,14 @@
+list: user.c_vocab
+-
+
+# types
+int
+bool
+void
+float
+char
+byte: uint8_t
+type def: typedef
+int thirty two: int32_t
+frack twenty four: frac24_t
+const
