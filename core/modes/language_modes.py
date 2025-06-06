@@ -38,7 +38,7 @@ class CodeActions:
             return code_special_file_map[file_name]
 
         file_extension = actions.win.file_ext().lower()
-        return extension_lang_map.get(file_extension, "")
+        return extension_lang_map.get(file_extension, "plaintext")
 
 
 @ctx_forced.action_class("code")

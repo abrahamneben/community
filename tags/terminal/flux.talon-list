@@ -1,0 +1,9 @@
+list: user.flux
+-
+wake up: wake_up
+disable sleep: disable_sleep
+get beryllium: "get /beryllium/"
+node catalyst: node catalyst
+node ezairo: node ezairo
+node radio: node radio
+exit: exit

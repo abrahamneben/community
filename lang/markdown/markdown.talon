@@ -1,44 +1,36 @@
 code.language: markdown
+code.language: plaintext
 -
-(level | heading | header) one:
-    edit.line_start()
-    "# "
-(level | heading | header) two:
-    edit.line_start()
-    "## "
-(level | heading | header) three:
-    edit.line_start()
-    "### "
-(level | heading | header) four:
-    edit.line_start()
-    "#### "
-(level | heading | header) five:
-    edit.line_start()
-    "##### "
-(level | heading | header) six:
-    edit.line_start()
-    "###### "
+header add:
+    edit.line_end()
+    "\n# "
+header two add:
+    edit.line_end()
+    "\n## "
+header three add:
+    edit.line_end()
+    "\n### "
 
-list [one]:
-    edit.line_start()
-    "- "
-list two:
-    edit.line_start()
-    "    - "
-list three:
-    edit.line_start()
-    "        - "
-list four:
-    edit.line_start()
-    "            - "
-list five:
-    edit.line_start()
-    "                - "
-list six:
-    edit.line_start()
-    "                    - "
 
-{user.markdown_code_block_language} block:
-    user.insert_snippet("```{markdown_code_block_language}\n$0\n```")
+star add:
+    edit.line_end()
+    "\n* "
+sub star add:
+    edit.line_end()
+    "\n  - "
 
-link: user.insert_snippet_by_name("link")
+new phrase: ". "
+
+# snip code block:
+#     user.insert_between("```\n","\n```")
+
+# snip code inline:
+#     user.insert_between("`","`")
+
+# link:
+#     "[]()"
+#     key(left:3)
+
+
+toggle <user.cursorless_target>:
+    user.cursorless_vscode_command("abraham_utils.toggleCheckmark", cursorless_target)

@@ -12,3 +12,12 @@ tab search <user.text>$:
     sleep(200ms)
     insert("{text}")
     key(down)
+
+tab reload: user.chrome_mod("cmd-r")
+copy address:
+    key(cmd-l)
+    key(cmd-c)
+    key(escape)
+
+go address:
+    key(cmd-l)
