@@ -7,7 +7,6 @@ from .snippets_insert_raw_text import insert_snippet_raw_text
 
 mod = Module()
 
-
 @mod.action_class
 class Actions:
     def insert_snippet(body: str):
