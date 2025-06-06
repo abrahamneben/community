@@ -1,0 +1,13 @@
+list: user.system_path_data
+-
+user: /Users/aneben
+desktop: /Users/aneben/Desktop
+desk: /Users/aneben/Desktop
+documents: /Users/aneben/Documents
+docks: /Users/aneben/Documents
+downloads: /Users/aneben/Downloads
+talon home: /Users/aneben/.talon
+talon recordings: /Users/aneben/.talon/recordings
+talon user: /Users/aneben/.talon/user
+home: /Users/aneben
+temp: /tmp/

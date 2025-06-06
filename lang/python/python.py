@@ -1,6 +1,5 @@
-import re
-
 from talon import Context, Module, actions, settings
+import re
 
 from ..tags.operators import Operators
 
@@ -9,38 +8,10 @@ ctx = Context()
 ctx.matches = r"""
 code.language: python
 """
-ctx.lists["user.code_common_function"] = {
-    "enumerate": "enumerate",
-    "integer": "int",
-    "length": "len",
-    "list": "list",
-    "print": "print",
-    "range": "range",
-    "set": "set",
-    "split": "split",
-    "string": "str",
-    "update": "update",
-}
 
-"""a set of fields used in python docstrings that will follow the
-reStructuredText format"""
-docstring_fields = {
-    "class": ":class:",
-    "function": ":func:",
-    "parameter": ":param:",
-    "raise": ":raise:",
-    "returns": ":return:",
-    "type": ":type:",
-    "return type": ":rtype:",
-    # these are sphinx-specific
-    "see also": ".. seealso:: ",
-    "notes": ".. notes:: ",
-    "warning": ".. warning:: ",
-    "todo": ".. todo:: ",
-}
+mod.list('python_vocab')
 
 mod.list("python_docstring_fields", desc="python docstring fields")
-ctx.lists["user.python_docstring_fields"] = docstring_fields
 
 ctx.lists["user.code_type"] = {
     "boolean": "bool",
@@ -263,3 +234,4 @@ class UserActions:
 
     def code_next():
         actions.insert("continue")
+

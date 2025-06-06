@@ -219,7 +219,7 @@ mod.list("number_small", "List of small (0-99) numbers")
 mod.tag("unprefixed_numbers", desc="Dont require prefix when saying a number")
 ctx.lists["user.number_small"] = get_spoken_form_under_one_hundred(
     0,
-    99,
+    10,
     include_default_variant_for_single_digits=True,
     include_double_digits=True,
 )
@@ -284,7 +284,7 @@ def number_prose_unprefixed(m) -> str:
     return m[0]
 
 
-@mod.capture(rule="(numb | numeral) <user.number_prose_unprefixed>")
+@mod.capture(rule="number <user.number_prose_unprefixed>")
 def number_prose_prefixed(m) -> str:
     return m.number_prose_unprefixed
 

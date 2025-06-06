@@ -1,18 +1,25 @@
 list: user.website
 -
-talon home page: http://talonvoice.com
-talon slack: http://talonvoice.slack.com/messages/help
-talon wiki: https://talon.wiki/
-talon practice: https://chaosparrot.github.io/talon_practice/
-talon repository search: https://search.talonvoice.com/search/
-amazon: https://www.amazon.com/
-dropbox: https://dropbox.com/
-google: https://www.google.com/
-google calendar: https://calendar.google.com
-google maps: https://maps.google.com/
-google scholar: https://scholar.google.com/
-gmail: https://mail.google.com/
-github: https://github.com/
-gist: https://gist.github.com/
-wikipedia: https://en.wikipedia.org/
-youtube: https://www.youtube.com/
+Gmail: https://mail.google.com/mail/u/0/#inbox
+chat: https://chatgpt.com/
+raspberry switch: http://raspberry.thinlens.net:8080/
+partial derivatives: https://math.stackexchange.com/questions/3266639/notation-for-partial-derivative-of-functions-of-functions
+tracker: https://app.asana.com/1/1200333844633665/home
+sound check: http://soundcheck.local/analysis
+Foam - Visual Studio Marketplace: https://marketplace.visualstudio.com/items?itemName=foam.foam-vscode
+Python behind the scenes #12: how async/await works in Python: https://tenthousandmeters.com/blog/python-behind-the-scenes-12-how-asyncawait-works-in-python/
+Chromatic repo: https://github.com/GoChromatic/Chromatic
+qbittorrent: https://qb.thinlens.net/
+talon slack: https://app.slack.com/client/T7FPSMV8F/C7EK0P3R9
+Fast mail: https://app.fastmail.com/mail/Inbox/?u=476e404b
+Chromatic slack: https://app.slack.com/client/T02HDJ7M5E3/C04E64NL109
+Unifi: https://unifi.thinlens.net/manage/default/dashboard
+Homebridge: http://raspberry.thinlens.net:8581/
+Pi Hole: http://raspberry.thinlens.net/admin/
+Sonar: http://sonarr.thinlens.net/
+Radar: https://radarr.thinlens.net/
+ZMK editor: https://nickcoutsos.github.io/keymap-editor/
+Chromatic Pulls: https://github.com/pulls
+Chromatic Actions: https://github.com/GoChromatic/Chromatic/actions?query=actor%3Aabrahamneben
+Notes: https://notes.thinlens.net/
+Jellyfin: https://jelly.thinlens.net/web/#/home.html

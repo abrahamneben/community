@@ -50,7 +50,6 @@ class Symbol:
 
 currency_symbols = [
     Symbol("$", ["dollar sign"], ["dollar"]),
-    Symbol("£", ["pound sign"], ["pound"]),
 ]
 
 symbols = [
@@ -67,20 +66,20 @@ symbols = [
     Symbol("@", ["at symbol", "at sign"]),
     Symbol("&", ["ampersand", "and sign"], ["amper"]),
     Symbol("-", ["hyphen"], ["minus", "dash"]),
-    Symbol("=", None, ["equals"]),
+    Symbol("=", None, ["equal"]),
     Symbol("+", None, ["plus"]),
     Symbol("~", None, ["tilde"]),
     Symbol("_", None, ["down score", "underscore"]),
-    Symbol("(", ["paren", "L paren", "left paren"], None),
-    Symbol(")", ["R paren", "right paren"], None),
-    Symbol("[", None,["brack", "L brack", "bracket", "L bracket", "left bracket", "square", "L square", "left square",],),
-    Symbol("]", None, ["R brack", "R bracket", "right bracket", "R square", "right square"]),
+    Symbol("(", ["prince"], None),
+    Symbol(")", ["princess"], None),
+    Symbol("[", None,["square"],),
+    Symbol("]", None, ["rare"]),
     Symbol("/", ["forward slash"], ["slash"]),
-    Symbol("\\", None, ["backslash"]),
-    Symbol("{", None, ["brace", "L brace", "left brace", "curly bracket", "left curly bracket"],),
-    Symbol("}", None, ["R brace", "right brace","R curly bracket", "right curly bracket"]),
-    Symbol("<", None, ["angle", "L Angle", "left angle", "less than"]),
-    Symbol(">", None, ["rangle", "R angle", "right angle", "greater than"]),
+    Symbol("\\", None, ["blash"]),
+    Symbol("{", None, ["brace"],),
+    Symbol("}", None, ["race"]),
+    Symbol("<", None, ["angle"]),
+    Symbol(">", None, ["rangle"]),
     Symbol("^", None, ["caret"]),
     Symbol("|", None, ["pipe"]),
     Symbol("'", None, ["quote", "apostrophe"]),
