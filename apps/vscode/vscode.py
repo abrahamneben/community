@@ -70,6 +70,8 @@ os: mac
 app: vscode
 """
 
+mod.list('vscode_spaces')
+
 
 @ctx.action_class("app")
 class AppActions:
@@ -203,6 +205,10 @@ class Actions:
     def command_palette():
         """Show command palette"""
         actions.key("ctrl-shift-p")
+
+    def open_vscode_space(workspace_path: str):
+        """Open a workspace in vscode."""
+        actions.user.system_command(f"/usr/local/bin/code {workspace_path}")
 
 
 @mac_ctx.action_class("edit")

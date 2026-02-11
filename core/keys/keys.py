@@ -6,6 +6,9 @@ from .symbols import (
     symbol_key_dict,
 )
 
+from user.community.plugin.talon_tracker.talon_tracker import track_key_count
+
+
 mod = Module()
 ctx = Context()
 
@@ -23,6 +26,7 @@ mod.list("function_key", desc="All function keys")
 mod.list("special_key", desc="All special keys")
 mod.list("keypad_key", desc="All keypad keys")
 mod.list("punctuation", desc="words for inserting punctuation into text")
+mod.list("dictation_symbol_key_words", desc="words for inserting symbols into dictation mode text")
 
 
 @mod.capture(rule="{self.modifier_key}+")

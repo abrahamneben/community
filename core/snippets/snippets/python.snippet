@@ -94,3 +94,215 @@ insertionScope: statement
 -
 ($2 for $2 in $1 if $0)
 ---
+
+name: jupiterPreamble
+phrase: preamble
+-
+import matplotlib
+%matplotlib inline
+import matplotlib.pyplot as plt
+
+matplotlib.rcParams.update({
+'font.size': 14,
+'figure.facecolor': 'white',
+'axes.facecolor': 'white',
+'savefig.facecolor':'white'
+})
+
+import numpy as np
+from scipy import signal
+import soundfile as sf
+from tqdm import tqdm
+p = lambda arr: ','.join(map(str,arr))
+np.set_printoptions(edgeitems=30, linewidth = 1000000)
+---
+
+
+name: matplotlibFigure
+phrase: plot figure
+-
+plt.figure()
+---
+
+name: matplotlibSaveFigSize
+phrase: plot figure size
+-
+plt.figure(figsize=($1, $2))
+---
+
+name: matplotlibSaveFig
+phrase: plot save fig
+-
+plt.savefig($1, bbox_inches="tight")
+---
+
+name: plot
+phrase: plot
+-
+plt.plot($1, $2)
+---
+
+name: numpyLinspace
+phrase: num pie linn space
+-
+np.linspace($1, $2, $3)
+---
+
+name: numpyGenfromtxt
+phrase: num pie gen from text
+-
+np.genfromtxt($1, delimiter=$2, skip_header=$3)
+---
+
+name: numpyRange
+phrase: num pie range
+-
+np.arange($1)
+---
+
+name: numpyArray
+phrase: num pie array
+-
+np.array([$1], dtype=$2)
+---
+
+name: numpyZeroes
+phrase: num pie zeroes
+-
+np.zeros($1)
+---
+
+name: asType
+phrase: as type
+-
+.astype($1)
+---
+
+name: sine
+phrase: sine
+-
+np.sin($1)
+---
+
+name: cosine
+phrase: cosine
+-
+np.cos($1)
+---
+
+name: pylintDisableNext
+phrase: pie lint disable next
+-
+# pylint: disable-next=$1
+---
+
+name: pylintDisable
+phrase: pie lint disable
+-
+# pylint: disable=$1
+---
+
+name: withOpenWrite
+phrase: with open write
+-
+with open($1, "w") as f:
+    f.write($2)
+---
+
+name: withOpenWriteAppend
+phrase: with open append
+-
+with open($1, "a") as f:
+    f.write($2)
+---
+
+name: withOpen
+phrase: with open read
+-
+with open($1, "r") as f:
+    $2
+---
+
+name: logTen
+phrase: log ten
+-
+np.log10($1)
+---
+
+name: powerDecibel
+phrase: power decibal
+$0.wrapperPhrase: power decibal
+$0.wrapperScope: token
+insertionScope: token
+-
+20*np.log10($0)
+---
+
+name: decibel
+phrase: decibal
+$0.wrapperPhrase: decibal
+$0.wrapperScope: token
+insertionScope: token
+-
+10*np.log10($0)
+---
+
+name: plotLegend
+phrase: plot legend
+-
+plt.legend(loc=3, fontsize=10)
+---
+
+name: plotTitle
+phrase: plot title
+-
+plt.title("$1")
+---
+
+name: plotYLim
+phrase: plot why limb
+-
+plt.ylim([$1, $2])
+---
+
+name: plotXLim
+phrase: plot ex limb
+-
+plt.xlim([$1, $2])
+---
+
+name: plotXLabel
+phrase: plot ex label
+-
+plt.xlabel("$1")
+---
+
+name: plotYLabel
+phrase: plot why label
+-
+plt.ylabel("$1")
+---
+
+name: funkWithDocstring
+phrase: funk with dock string
+$1.insertionFormatter: SNAKE_CASE
+$3.insertionFormatter: CAPITALIZE_FIRST_WORD
+-
+def $1($2):
+"""$3""""
+    $4
+---
+
+name: keyValue
+phrase: key value
+-
+"$1": "$2",
+---
+
+name: assertNotNone
+phrase: assert not none
+-
+assert $1 is not None
+---
+
+

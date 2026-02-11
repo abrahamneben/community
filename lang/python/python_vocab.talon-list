@@ -1,0 +1,47 @@
+list: user.python_vocab
+-
+
+# keywords
+import
+return
+
+# built in functions
+len
+
+jason: json
+
+# types
+int
+bool
+tuple
+dict
+array
+enum
+ee num: enum
+string: str
+None
+num pie en dee array: np.ndarray
+num pie int thirty two: np.int32
+
+# linters
+pie lint: pylint
+
+# numpy
+num pie: numpy
+linn space: linspace
+gen from text: genfromtxt
+a range: arange
+cosine: cos
+exponent: exp
+pie: np.pi
+tau: 2*np.pi
+
+# matplotlib
+matt plot lib: matplotlib
+pie plot: pyplot
+why lim: ylim
+ex lim: xlim
+why label: ylabel
+ex label: xlabel
+as type: astype
+

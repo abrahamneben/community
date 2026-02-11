@@ -1,4 +1,5 @@
 tag: terminal
+mode: do_not_use
 -
 # tags should be activated for each specific terminal in the respective talon file
 

@@ -118,6 +118,7 @@ def close_editor(submit_draft: bool) -> None:
     global last_draft
 
     actions.edit.select_all()
+    actions.edit.copy()
 
     if submit_draft:
         actions.sleep("50ms")

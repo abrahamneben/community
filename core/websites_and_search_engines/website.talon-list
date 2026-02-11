@@ -1,18 +1,42 @@
 list: user.website
 -
-talon home page: http://talonvoice.com
-talon slack: http://talonvoice.slack.com/messages/help
-talon wiki: https://talon.wiki/
-talon practice: https://chaosparrot.github.io/talon_practice/
-talon repository search: https://search.talonvoice.com/search/
-amazon: https://www.amazon.com/
-dropbox: https://dropbox.com/
-google: https://www.google.com/
-google calendar: https://calendar.google.com
-google maps: https://maps.google.com/
-google scholar: https://scholar.google.com/
-gmail: https://mail.google.com/
-github: https://github.com/
-gist: https://gist.github.com/
-wikipedia: https://en.wikipedia.org/
-youtube: https://www.youtube.com/
+scholar: https://scholar.google.com/
+If the University of Chicago Won’t Defend the Humanities, Who Will? - The Atlantic: https://www.theatlantic.com/culture/archive/2025/08/university-chicago-humanities-doctorate/684004/
+selfh.st - Self-hosted content and software: https://selfh.st/
+A Mac-like experience on Linux – Adventures in Linux and KDE: https://pointieststick.com/2025/10/04/a-mac-like-experience-on-linux/
+archive.is: https://archive.is/9pJmb
+Hex: https://app.hex.tech/9094dff1-d90c-481d-85e7-988bf83299f5/hex/In-Case-Measurement-Analysis-03111Ow7OeES0X92JBzqZF/draft/logic
+data dog: https://app.datadoghq.com/logs?query=ezairo_measurement_result&agg_m=count&agg_m_source=base&agg_t=count&cols=host%2Cservice&messageDisplay=inline&refresh_mode=sliding&storage=hot&stream_sort=desc&viz=stream&from_ts=1758205677612&to_ts=1758209277612&live=true
+Pricing | Purelymail: https://purelymail.com/pricing
+Actually, you can't test if quantum uses complex numbers: https://algassert.com/post/2501
+wiki: https://wiki.thinlens.net/
+scripted: http://blueberry.thinlens.net:11080/endpoint/@scrypted/core/public/#/
+blue bubbles: https://bluebubbles.app/web/#/
+data dog: https://app.datadoghq.com/logs?query=7DL9KH8&agg_m=count&agg_m_source=base&agg_t=count&cols=host%2Cservice&messageDisplay=inline&refresh_mode=sliding&storage=hot&stream_sort=desc&viz=stream&from_ts=1755376017850&to_ts=1755379617850&live=true
+calendar: https://calendar.google.com/calendar/u/0/r
+How I configure BorgBackup and borgmatic - Justus Perlwitz: https://www.justus.pw/garden/borgbackup.html
+Ubiquiti Launches UniFi OS Server for Self-Hosting — LazyAdmin: https://lazyadmin.nl/home-network/unifi-os-server/#download-links
+Introducing UniFi OS Server for MSPs: https://blog.ui.com/article/introducing-unifi-os-server
+A Visit to Tycho (Limited Edition) – CosmicBackground: https://cosmicbackground.io/products/a-visit-to-tycho%3Fvariant%3D42842488701097
+Gmail: https://mail.google.com/mail/u/0/#inbox
+chat: https://chatgpt.com/
+raspberry switch: http://raspberry.thinlens.net:8080/
+partial derivatives: https://math.stackexchange.com/questions/3266639/notation-for-partial-derivative-of-functions-of-functions
+tracker: https://app.asana.com/1/1200333844633665/home
+sound check: http://soundcheck.local/analysis
+Foam - Visual Studio Marketplace: https://marketplace.visualstudio.com/items?itemName=foam.foam-vscode
+Python behind the scenes #12: how async/await works in Python: https://tenthousandmeters.com/blog/python-behind-the-scenes-12-how-asyncawait-works-in-python/
+Chromatic repo: https://github.com/GoChromatic/Chromatic
+qbittorrent: https://qb.thinlens.net/
+talon slack: https://app.slack.com/client/T7FPSMV8F/C7EK0P3R9
+Fast mail: https://app.fastmail.com/mail/Inbox/?u=476e404b
+Chromatic slack: https://app.slack.com/client/T02HDJ7M5E3/C04E64NL109
+Unifi: https://unifi.thinlens.net/manage/default/dashboard
+Homebridge: http://raspberry.thinlens.net:8581/
+Pi Hole: http://raspberry.thinlens.net/admin/
+Sonar: http://sonarr.thinlens.net/
+Radar: https://radarr.thinlens.net/
+ZMK editor: https://nickcoutsos.github.io/keymap-editor/
+Chromatic Pulls: https://github.com/pulls
+Chromatic Actions: https://github.com/GoChromatic/Chromatic/actions?query=actor%3Aabrahamneben
+Jellyfin: https://jelly.thinlens.net/web/#/home.html

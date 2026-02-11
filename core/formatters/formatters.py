@@ -47,16 +47,18 @@ class CodeFormatter(Formatter):
         delimiter: str,
         format_first: Callable[[str], str],
         format_rest: Callable[[str], str],
+        wrap_str: str = "",
     ):
         super().__init__(id)
         self._delimiter = delimiter
         self._format_first = format_first
         self._format_rest = format_rest
+        self._wrap_str = wrap_str
 
     def format(self, text: str) -> str:
-        return self._format_delim(
+        return self._wrap_str + self._format_delim(
             text, self._delimiter, self._format_first, self._format_rest
-        )
+        ) + self._wrap_str
 
     def unformat(self, text: str) -> str:
         return remove_code_formatting(text)
@@ -228,6 +230,7 @@ formatter_list = [
     CustomFormatter("ALL_LOWERCASE", lambda text: text.lower()),
     CustomFormatter("COMMA_SEPARATED", lambda text: re.sub(r"\s+", ", ", text)),
     CustomFormatter("REMOVE_FORMATTING", remove_code_formatting),
+    CustomFormatter("SKIS", lambda text: f"`{text}`"),
     TitleFormatter("CAPITALIZE_ALL_WORDS"),
     # The sentence formatter being called `CAPITALIZE_FIRST_WORD` is a bit of a misnomer, but kept for backward compatibility.
     SentenceFormatter("CAPITALIZE_FIRST_WORD"),
@@ -237,11 +240,12 @@ formatter_list = [
     CodeFormatter("PRIVATE_CAMEL_CASE", "", lower, capitalize),
     CodeFormatter("PUBLIC_CAMEL_CASE", "", capitalize, capitalize),
     CodeFormatter("SNAKE_CASE", "_", lower, lower),
+    # CodeFormatter("SKI_SNAKE_CASE", "_", lower, lower, "`"),
     CodeFormatter("DASH_SEPARATED", "-", lower, lower),
     CodeFormatter("DOT_SEPARATED", ".", lower, lower),
     CodeFormatter("SLASH_SEPARATED", "/", lower, lower),
     CodeFormatter("ALL_SLASHES", "/", lambda text: f"/{text.lower()}", lower),
-    CodeFormatter("DOUBLE_UNDERSCORE", "__", lower, lower),
+    CodeFormatter("DOUBLE_UNDERSCORE", "", lambda text: f"__{lower(text)}__", lambda text: f"{lower(text)}__"),
     CodeFormatter("DOUBLE_COLON_SEPARATED", "::", lower, lower),
 ]
 

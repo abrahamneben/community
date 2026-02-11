@@ -1,4 +1,5 @@
 tag: user.find
+mode: do_not_use
 -
 hunt this: edit.find()
 hunt this (pace | paste):

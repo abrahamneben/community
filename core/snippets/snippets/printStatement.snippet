@@ -5,9 +5,14 @@ insertionScope: statement
 $0.wrapperPhrase: print
 ---
 
+language: c
+-
+printf($0);
+---
+
 language: cpp
 -
-std::printf($0);
+std::cout << $0 << "\n";
 ---
 
 language: java

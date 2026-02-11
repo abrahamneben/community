@@ -1,4 +1,5 @@
 code.language: python
+mode: do_not_use
 -
 tag(): user.code_imperative
 tag(): user.code_object_oriented

@@ -1,6 +1,8 @@
 name: forLoopStatement
-phrase: for
+phrase: for loop
 insertionScope: statement
+$0.wrapperPhrase: for loop
+$0.wrapperScope: statement
 ---
 
 language: scala
@@ -8,14 +10,14 @@ language: scala
 for ($1) $0
 ---
 
-language: cpp | csharp | java | javascript | typescript | javascriptreact | typescriptreact
+language: csharp | java | javascript | typescript | javascriptreact | typescriptreact
 -
 for ($1) {
 	$0
 }
 ---
 
-language: php | c
+language: php | c | cpp
 -
 for ($1; $2; $3) {
 	$0

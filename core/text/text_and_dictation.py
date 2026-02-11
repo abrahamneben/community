@@ -32,6 +32,10 @@ mod.list(
     "currency",
     desc="Currency types (e.g., dollars, euros) that can be used within prose",
 )
+mod.list(
+    "units",
+    desc="Unit types (e.g., min, sec) that can be used within prose",
+)
 
 ctx = Context()
 ctx_dragon = Context()
@@ -83,6 +87,12 @@ def prose_currency(m) -> str:
         s += "." + m.number_string_2
     return s
 
+@mod.capture(
+    rule="<user.number_prose_unprefixed> {user.units}"
+)
+def prose_number_with_units(m) -> str:
+    return f"{m.number_prose_unprefixed} {m.units}"
+
 
 @mod.capture(rule="am|pm")
 def time_am_pm(m) -> str:
@@ -127,7 +137,7 @@ def word(m) -> str:
         )
 
 
-@mod.capture(rule="({user.vocabulary} | <user.prose_contact> | <phrase>)+")
+@mod.capture(rule="({user.vocabulary} | <user.prose_contact> | <phrase> | <user.abbreviation>)+")
 def text(m) -> str:
     """A sequence of words, including user-defined vocabulary."""
     return format_phrase(m)
@@ -138,16 +148,18 @@ def text(m) -> str:
         "("
         "{user.vocabulary}"
         "| {user.punctuation}"
+        "| {user.dictation_symbol_key_words}"
         "| {user.prose_snippets}"
+        "| <user.prose_number_with_units>"
+        "| <user.number_prose_prefixed>"
         "| <user.prose_currency>"
         "| <user.prose_time>"
-        "| <user.number_prose_prefixed>"
         "| <user.prose_percent>"
         "| <user.prose_modifier>"
         "| <user.abbreviation>"
         "| <user.prose_contact>"
         "| <phrase>"
-        ")+"
+       ")+"
     )
 )
 def prose(m) -> str:
@@ -161,6 +173,7 @@ def prose(m) -> str:
         "("
         "{user.vocabulary}"
         "| {user.punctuation}"
+        "| {user.dictation_symbol_key_words}"
         "| {user.prose_snippets}"
         "| <user.prose_currency>"
         "| <user.prose_time>"

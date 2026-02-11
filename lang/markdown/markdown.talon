@@ -1,4 +1,5 @@
 code.language: markdown
+mode: do_not_use
 -
 (level | heading | header) one:
     edit.line_start()

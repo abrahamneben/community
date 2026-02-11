@@ -9,10 +9,7 @@ ctx.matches = r"""
 code.language: c
 """
 
-ctx.lists["self.c_pointers"] = {
-    "pointer": "*",
-    "pointer to pointer": "**",
-}
+mod.list('c_vocab')
 
 ctx.lists["self.stdint_signed"] = {
     "signed": "",

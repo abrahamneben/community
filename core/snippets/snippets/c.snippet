@@ -9,3 +9,45 @@ typedef struct {
     $1
 } $0
 ---
+
+name: standardList
+phrase: standard list
+-
+std::list<$1>
+---
+
+name: staticCast
+phrase: static cast
+-
+static_cast<$1>
+---
+
+name: reinterpretCast
+phrase: reinterpret cast
+-
+reinterpret_cast<$1>
+---
+
+name: standardVector
+phrase: standard vector
+-
+std::vector<$1>
+---
+
+name: preprocDefine
+phrase: pre prock define
+-
+#define $1 $2
+---
+
+name: preprocInclude
+phrase: pre prock include
+-
+#include $1 $2
+---
+
+name: castVoidStar
+phrase: cast void star
+-
+(void *)$1
+---

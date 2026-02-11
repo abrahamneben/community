@@ -39,6 +39,7 @@ def on_ready():
         "talon home": talon_home,
         "talon recordings": talon_home / "recordings",
         "talon user": actions.path.talon_user(),
+        "temp": "/tmp/",
     }
 
     if app.platform == "windows":

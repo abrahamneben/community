@@ -3,6 +3,10 @@ from urllib.parse import quote_plus
 
 from talon import Context, Module
 
+from . import bookmarks
+
+# bookmarks.update_bookmarks()
+
 mod = Module()
 mod.list("website", desc="A website.")
 mod.list(

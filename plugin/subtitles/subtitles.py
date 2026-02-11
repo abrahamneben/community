@@ -1,10 +1,11 @@
 from typing import Any, Callable, Optional, Sequence, Type
 
-from talon import Module, app, cron, ctrl, settings, ui
+from talon import Module, app, cron, ctrl, settings, ui, actions
 from talon.canvas import Canvas
 from talon.skia.canvas import Canvas as SkiaCanvas
 from talon.skia.imagefilter import ImageFilter
 from talon.types import Rect
+from subprocess import call
 
 mod = Module()
 
@@ -71,6 +72,9 @@ def show_subtitle(text: str):
     """Show subtitle"""
     if not setting_show():
         return
+
+    # actions.app.notify(text)
+
     clear_canvases()
     screens = get_screens()
     for screen in screens:
@@ -122,11 +126,11 @@ def on_draw(c: SkiaCanvas, screen: ui.Screen, text: str):
     c.paint.color = setting_color()
     c.draw_text(text, x, y)
 
-    # Outline
-    c.paint.imagefilter = None
-    c.paint.style = c.paint.Style.STROKE
-    c.paint.color = setting_color_outline()
-    c.draw_text(text, x, y)
+    # # Outline
+    # c.paint.imagefilter = None
+    # c.paint.style = c.paint.Style.STROKE
+    # c.paint.color = setting_color_outline()
+    # c.draw_text(text, x, y)
 
 
 def calculate_timeout(text: str) -> int:

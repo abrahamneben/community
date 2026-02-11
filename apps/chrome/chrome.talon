@@ -1,4 +1,5 @@
 app: chrome
+mode: do_not_use
 -
 tag(): browser
 tag(): user.tabs

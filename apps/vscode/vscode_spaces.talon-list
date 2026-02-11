@@ -1,0 +1,13 @@
+list: user.vscode_spaces
+-
+
+chromatic: ~/Chromatic
+bootstrap: ~/sync/bootstrap
+community: /Users/aneben/.talon/user/community
+talon: /Users/aneben/.talon/user
+macmini: "--remote ssh-remote+aneben@macmini.thinlens.net /Users/aneben"
+notes: /Users/aneben/data/notes
+extension: ~/repos/abraham_utils_vscode
+sickness: /Users/aneben/repos/zmk-cygnus-oled
+
+

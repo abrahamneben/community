@@ -3,6 +3,29 @@ language: markdown
 
 name: link
 phrase: link
+insertionScope: token
+$0.wrapperPhrase: link
+$0.wrapperScope: token
 -
-[$1]($0)
+[$0]($1)
 ---
+name: codeQuoteBlock
+phrase: code block
+insertionScope: token
+$0.wrapperPhrase: code block
+$0.wrapperScope: token
+-
+```$1
+$0
+```
+---
+
+name: codeQuoteInline
+insertionScope: token
+phrase: code inline
+$0.wrapperPhrase: code inline
+$0.wrapperScope: token
+-
+`$0`
+---
+

@@ -24,8 +24,9 @@ class EditActions:
         # action(edit.delete_sentence):
 
     def delete_word():
-        actions.edit.select_word()
-        actions.edit.delete()
+        actions.key("alt-backspace")
+        # actions.edit.select_word()
+        # actions.edit.delete()
 
     def down():
         actions.key("down")
